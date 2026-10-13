@@ -11,6 +11,8 @@ wpId: 4473
 ---
 Hi! We’ve been learning about Dart for some weeks, if you’ve been following this series, you know we learned a lot of topics. In this post we’re going to talk about Classes in Dart, the Classes are one of the basics of programming.
 
+## Tabla de contenidos
+
 ## ? **What is a Class**
 
 A class is the object blueprint. Inside the class, we can find their properties, constructors, and functions. We already talked about functions in Dart, so we’re going to skip that part.
@@ -27,7 +29,7 @@ The constructors help us to initialize and set the values of our object. When we
 
 To create a Class in Dart, we need to use the reserved keyword class and then the name of the Class. For example:
 
-```
+```dart
 class Dog {
 
 }
@@ -35,7 +37,7 @@ class Dog {
 
 With this, we can create any Dog we want. But there’s more our Dog needs a name, so let’s create a variable that assigns that name.
 
-```
+```dart
 class Dog {
   String name = "Rocky";
 }
@@ -43,7 +45,7 @@ class Dog {
 
 That’s great! Now every time we create a new Dog, it’s going to have Rocky as the name. Now we need to add our dog’s ability to bark. For that, we need to create a function.
 
-```
+```dart
 class Dog {
   String name = "Rocky";
 
@@ -55,7 +57,7 @@ class Dog {
 
 We already have a blueprint for a Dog named Rocky who can bark. All we need to do is create an object from this blueprint is use the constructor.
 
-```
+```dart
 var MyDoggo = Dog();
 ```
 
@@ -65,7 +67,7 @@ The previous example shows us how we can create a Dog object using a default con
 
 To assign the name of our Dogs, we need to create a Constructor inside the class, which can help us to initialize our Dog objects with their name.
 
-```
+```dart
 class Dog {
   String name = "Rocky";
 
@@ -79,7 +81,7 @@ class Dog {
 
 Now we can create our Dogs using the following code.
 
-```
+```dart
 var doggo = Dog("Sparky");
 doggo.bark();
 ```

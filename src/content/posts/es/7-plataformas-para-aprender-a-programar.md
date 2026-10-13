@@ -12,6 +12,8 @@ wpId: 4037
 ---
 ¡Hola! Esta vez en este post quería hablarles un poco acerca de unas plataformas muy interesantes donde pueden aprender a programar desde 0, o en el caso de que ya sepas algo de programación, pero quieres aprender otro lenguaje y estés buscando una forma no aburrida para aprender.
 
+## Tabla de contenidos
+
 ## [**CodeAcademy**](http://codeacademy.com)
 
 Es una plataforma es muy buena para aprender a programar, ya que cuenta con una consola en la misma página y puedes empezar a practicar lo que acabas de aprender para ir avanzando, no importa si no tienes algún tipo de conocimiento de programación, porque al aprender un lenguaje en esta página te enseñaran desde lo mas básico. Si quieres dar los primeros pasos para empezar a desarrollar paginas web, puedes empezar por aquí que no te arrepentirás. CodeAcademy es gratis y puedes siempre pagar por la versión Pro, este sitio tiene también la opción de ver algunos cursos en español.

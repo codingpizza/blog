@@ -11,6 +11,8 @@ wpId: 4258
 ---
 ¡Hola! Finalmente hemos llegado a la segunda aplicación de esta serie de tutoriales que estamos realizando para aprender a programar en Android. En este post, vamos a implementar todo lo que hemos ido aprendiendo en los post anteriores y poder crear nuestra primera aplicación que obtiene datos de un servicio y los muestra al usuario. La aplicación en sí lo que hará es mostrar una lista de pizzas y de sus ingredientes, porque todos sabemos que la pizza es vida?.
 
+## Tabla de contenidos
+
 Las dependencias que utilizaremos para este proyecto serán las siguientes:
 
 \-Fragments  

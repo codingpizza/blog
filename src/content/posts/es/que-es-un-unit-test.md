@@ -14,6 +14,8 @@ wpId: 4497
 
 Hola! Probablemente hayas visto en ofertas de trabajo la siguiente frase, «Experiencia con pruebas unitarias y TDD.» Pero si eres como yo y no tienes idea sobre tests, has oído de ellos, sabes que existen y sabes que las buenas compañías lo usan. Pero, ¿qué son y cómo funcionan?
 
+## Tabla de contenidos
+
 ## ? Empecemos con un test
 
 Cuando alguien de QA (Quality assurance, aquellos que prueban tu app y encuentran fallos que tu no conocías) se acerca a mi y me pregunta si estoy seguro sobre lo que hace mi código, mi respuesta siempre es no, y no es porque no confié en mis habilidades de programación, es porque soy humano y como todo ser humano cometemos errores. Es por esto que empece a aprender sobre testing ya que los test pueden ayudarte a conseguir los errores que vas a introducir en el futuro.
@@ -30,7 +32,7 @@ Al hacer pruebas de cada una de las unidades estamos haciendo pruebas unitarias.
 
 Digamos que vamos a crear una nueva, nunca hecha, disruptiva app llamada calculadora. En esta app tendremos una función llamada **sum()**, la cual realiza la suma de dos números. Si lo hacemos en Kotlin, sería:
 
-```
+```kotlin
 fun sum(int a,int b) : Int {
     return a+a;
 }
@@ -44,7 +46,7 @@ Casi todos los lenguajes tienen un framework para tests. Puedes revisar cual es 
 
 Una prueba unitaria se parece a esto y por defecto está en la carpeta de tests del proyecto.
 
-```
+```kotlin
     @Test
     fun calculator_sum_shouldReturnTheSumBetweenTwoParameters() {
         //Given
@@ -78,7 +80,7 @@ En mi caso estoy usando Intellij Idea, en este IDE tengo un botón de play cerca
 
 Nuestro test ha fallado porque nuestra función está sumando dos veces el primer parámetro ?‍♂. Ahora que ya sabemos qué ocurre podremos cambiar nuestra función y ejecutar de nuevo el test para ver cómo pasa.
 
-```
+```kotlin
 fun sum(int a,int b) : Int {
     return a+b;
 }
@@ -90,7 +92,7 @@ Increíble. Tengo que admitir que ahora el verde se ha vuelto uno de mis colores
 
 **Nota de Kotlin:** En Kotlin, podemos utilizar las comillas invertidas como nombre de la función y hacer nuestro Test mas legible!
 
-```
+```kotlin
 @Test
     fun `calculator sum should Return The Sum Between Two Parameters`() {
         //Given

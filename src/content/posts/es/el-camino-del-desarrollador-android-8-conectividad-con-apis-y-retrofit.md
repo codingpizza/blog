@@ -12,6 +12,8 @@ wpId: 4118
 ---
 Nuestras tareas de cada día en la mayoría de las aplicaciones que creamos son las llamadas a servicios,APIs y otras fuentes donde podamos consumir datos para mostrar al usuario en nuestra aplicación. En estos casos existen muchas maneras de realizar estas tareas pero gracias a Retrofit, una librería para la capa de comunicación de nuestra aplicación se nos hace fácil esta tarea.
 
+## Tabla de contenidos
+
 Integrar Retrofit a tu aplicación es bastante sencillo, solo necesitas seguir los siguientes pasos:
 
 1.  Integrar Retrofit a las dependencias a tu proyecto de Android Studio en el build.gradle.

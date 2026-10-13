@@ -13,6 +13,8 @@ wpId: 4341
 
 En este articulo vamos a aprender sobre las variables en Dart, las variables son como cajas pequeñas que tienen una referencia a un valor. Y estas cajas pequeñas pueden tener un nombre para identificarlas facilmente.
 
+## Tabla de contenidos
+
 ## **¿Cómo podemos crear variables en Dart?**
 
 En Dart podemos crear variables de tres formas:

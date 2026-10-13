@@ -14,6 +14,8 @@ wpId: 4469
 
 En los post anteriores sobre Dart, hablamos sobre las Collections. Hablamos sobre Lists,Maps y sets. Y en esta oportunidad vamos a hablar sobre funciones asombrosas y que nos pueden ayudar en muchos casos.
 
+## Tabla de contenidos
+
 Nota:En este post usamos varios elementos que probablemente quieras repasar, como las funciones anónimas. Si es tu primera vez leyendo esta serie de artículos puedes aquí debajo te dejo el link para que leas sobre funciones en **Dart**.
 
 **[Funciones en Dart](https://www.codingpizza.com/funciones-en-dart/)**
@@ -22,7 +24,7 @@ Nota:En este post usamos varios elementos que probablemente quieras repasar, com
 
 The **map** function exists in many programming languages, and Dart is not an exception. This function creates a new list after transform every element of the previous list. This function takes as a parameter an anonymous function. Let’s see an example.
 
-```
+```dart
 var list = List.of({1,2,3,4});
 var mappedList = list.map( (number) => number *2);
 print(mappedList);
@@ -37,7 +39,7 @@ En este ejemplo, hemos creado una función anónima que tiene un número como pa
 
 Muchas veces necesitamos recibir una lista desde el servidor y mostrarla al usuario. Pero ¿qué ocurre si necesitamos aplicar algunos filtros y ordenarla de forma ascendente? Esta función está aquí para ayudarnos con eso, veamos un ejemplo.
 
-```
+```dart
 var randomNumbers = List.of({14, 51, 23, 45, 6, 3, 22, 1});
 randomNumbers.sort();
 print(randomNumbers);
@@ -45,7 +47,7 @@ print(randomNumbers);
 
 El resultado es el siguiente.
 
-```
+```dart
 [1, 3, 6, 14, 22, 23, 45, 51]
 ```
 
@@ -53,7 +55,7 @@ El resultado es el siguiente.
 
 La función generate es genial cuando necesitas crear una lista de números para hacer una prueba rápida. Toma como parámetro un número el cual indica el tamaño de la lista y una función anónima.
 
-```
+```dart
 var generatedList = List.generate(10, (number) => number * Random().nextInt(50));
   print(generatedList);
 ```
@@ -64,7 +66,7 @@ Dentro de la función anónima obtenemos un número y lo multiplicamos por un n�
 
 Ya solo con su nombre en inglés te explica que hace esta función simplemente toma los primeros elementos de la lista. Puede ser útil cuando tengas una lista de competidores y quieras solo obtener el top tres de todos los competidores.
 
-```
+```dart
 var list = List.from([1,2,3,4,5,6]);
 var topThreeList = list.take(3);
 print(topThreeList);
@@ -76,7 +78,7 @@ El resultado es: `1,2,3`
 
 Esta función es el opuesto de la función Take, está ignora la cantidad de elementos que se le indique. En caso de que se le indiquen 3 elementos obviara los primeros tres elementos de la lista.
 
-```
+```dart
 var list = List.from([1,2,3,4,5,6]);
 var skipList = list.skip(3);
 print(skipList);
@@ -90,7 +92,7 @@ Esta función es una de mis favoritas ya que nos ayuda a crear una lista con los
 
 Digamos que tenemos una lista aleatoria de números en caso de que queramos una lista con solo numeros pares bastará realizar esa comprobación en la función anónima. Veamos el siguiente ejemplo.
 
-```
+```dart
 var randomNumbers = List.of({14, 51, 23, 45, 6, 3, 22, 1});
 var evenNumbers = randomNumbers.where((number => number.isEven));
 print(evenNumbers);
@@ -103,7 +105,7 @@ El resultado del ejemplo anterior es el siguiente:
 
 Estas funciones pueden combinarse para lograr una mejor solución. Puedes combinar la función where con la función sort para obtener los números pares ordenados de forma ascendente por ejemplo.
 
-```
+```dart
 var randomNumbers = List.of({14, 51, 23, 45, 6, 3, 22, 1});
 var evenNumbers = randomNumbers.where((number) => number.isEven);
 evenNumbers = evenNumbers.toList()..sort();

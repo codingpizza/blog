@@ -14,6 +14,8 @@ wpId: 4444
 
 Hola!, en el último mes he estado escribiendo sobre Dart y cómo funcionan las cosas en este lenguaje. Si eres nuevo por acá puedes revisar mis otros post sobre Dart. Dejaré los enlaces acá debajo.
 
+## Tabla de contenidos
+
 -   [**Variables**](https://www.codingpizza.com/variables-en-dart/)
 -   [**Funciones**](https://www.codingpizza.com/funciones-en-dart/)
 -   **[Parámetros](https://www.codingpizza.com/parametros-en-dart/)**
@@ -26,7 +28,7 @@ Digamos que tenemos que elegir entre salir a la calle con un paraguas o no. Revi
 
 Si quisiéramos escribir eso en código seria así:
 
-```
+```dart
 if (isGoingToRainToday()) {
  takeUmbrella() 
 } else {
@@ -38,7 +40,7 @@ if (isGoingToRainToday()) {
 
 Los If ayudan a nuestro código a tomar una decisión y tienen la siguiente sintaxis.
 
-```
+```dart
 if (condition) {
  doThis()
 } else {
@@ -52,7 +54,7 @@ Un dato para tener en cuenta es que el **else** no es siempre necesario, si solo
 
 En caso de que necesites hacer una comparación con mas de dos opciones puedes usar un **else** **if.** Veamos como funciona.
 
-```
+```dart
 var flavor = "Vanilla";
 if (flavor == "Vanilla"){
 	print("Here's your vanilla ice cream");
@@ -74,7 +76,7 @@ Los Switch Case funcionan con variables en vez de funcionar con una condición. 
 
 Aquí podemos ver un ejemplo.
 
-```
+```dart
 var flavor = "Vanilla"
 switch (flavor) {
 	case "Vanilla":
@@ -92,7 +94,7 @@ switch (flavor) {
 
 El bucle **For** es una instrucción común que se puede encontrar en casi todos los lenguajes. Se utiliza para ejecutar un código una limitadacantidad de veces. Su sintaxis en dart es la siguiente:
 
-```
+```dart
 for (var i = 0; i < list.length; i++){
  print(list[i]);
 }
@@ -106,7 +108,7 @@ Por cada ciclo que realiza el bucle, el código dentro del **for** es ejecutado.
 
 El bucle **While** se ejecuta mientras una condición se cumpla, por ejemplo.
 
-```
+```dart
 int laps = 0;
 while (laps < 5){
 	print("Laps $laps");
@@ -116,7 +118,7 @@ while (laps < 5){
 
 En este ejemplo, el código dentro del while es ejecutado hasta que la variable **laps** (vueltas) es menor que cinco.
 
-```
+```dart
 Laps 0
 Laps 1
 Laps 2
@@ -128,7 +130,7 @@ Laps 4
 
 El hermano del bucle While es el Do While. Este bucle al contrario de su hermano ejecuta el código y luego evalúa la condición. Aquí tenemos un ejemplo.
 
-```
+```dart
 int countDown = 5;
 do {
  print("Time remaining: $countDown");
@@ -138,7 +140,7 @@ do {
 
 Este ejemplo imprime la variable **countDown** mientras sea diferente de cero.
 
-```
+```dart
 Time remaining: 5
 Time remaining: 4
 Time remaining: 3

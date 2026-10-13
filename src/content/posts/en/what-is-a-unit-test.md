@@ -12,6 +12,8 @@ wpId: 4494
 ---
 You probably seen in those job offers, «Experience with Tests and TDD.» But if you’re like me you probably have no idea about tests, you heard about them, and you know that the good developers are using it. But, what are they? how they work?
 
+## Table of contents
+
 ## ? Let’s start with the test
 
 When a QA comes to me and asks me if I’m confident about what my code is supposed to do, I always answer no, and that’s because I know I could mess it up. It’s not because I don’t trust my coding skills. It’s because I’m human, and we made mistakes. That’s why I started learning about testing because an excellent test suite can help you to catch the bugs that you’re going to introduce.
@@ -30,7 +32,7 @@ In our case, a unit can be a class or a function which can group to create an Ap
 
 Let’s say we are building a shiny, never made before, unique app called calculator. In this app, we have a function called sum(), which realizes an addition of two numbers. In Kotlin, it will be.
 
-```
+```kotlin
 fun sum(int a,int b) : Int {
     return a+a;
 }
@@ -44,7 +46,7 @@ Almost every language has its unit testing frameworks. You can check your langua
 
 A unit test looks like this and, by default, lives in your test folder.
 
-```
+```kotlin
     @Test
     fun calculator_sum_shouldReturnTheSumBetweenTwoParameters() {
         //Given
@@ -76,7 +78,7 @@ I’m using Intellij Idea, so there’s a play button close to that test, we cli
 
 Our test failed because our function is returning the sum between our first parameter ?‍♂. Now we can change our function to the following and it will pass!
 
-```
+```kotlin
 fun sum(int a,int b) : Int {
     return a+b;
 }
@@ -88,7 +90,7 @@ Amazing. I must admit now the green has become one of my favorite colors since i
 
 **Kotlin Note**: In Kotlin, we can use backticks to wrap the name of the test so it can be more readable!
 
-```
+```kotlin
 @Test
     fun `calculator sum should Return The Sum Between Two Parameters`() {
         //Given

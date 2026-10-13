@@ -20,7 +20,7 @@ Si no sabes que es un composable o cómo funciona Jetpack Compose puedes visitar
 
 Volviendo al tema, en tiempos antiguos y oscuros para crear una View de Android programáticamente había que tener a disposición el contexto de la aplicación y con el crear la vista. En el mundo de Jetpack Compose esto no es así, ya que como mencionamos anteriormente tenemos un composable llamado Android View que lo podemos usar de la siguiente forma:
 
-```
+```kotlin
 AndroidView(factory = { myOldView }) { oldView ->
     oldView.doSomething()
 }
@@ -30,7 +30,7 @@ Dentro de la lambda podemos crear nuestra View con el contexto que nos viene dad
 
 Empecemos creando nuestro Player. El Player puede ser creado de la misma forma con el que se creaba en un mundo sin compose, solo que para obtener el contexto es necesario utilizar el `LocalContext.current` en lugar del `Context` que se utilizan normalmente en una Activity o Fragment.
 
-```
+```kotlin
 @Composable
 private fun generatePlayer(uri: String): SimpleExoPlayer {
     val player = SimpleExoPlayer.Builder(LocalContext.current).build()
@@ -44,7 +44,7 @@ private fun generatePlayer(uri: String): SimpleExoPlayer {
 
 Para crear el PlayerView, primero tenemos que crear una variable llamada `playerView`, luego utilizar la función `remember` para generar una instancia del `PlayerView` y luego asignarla a nuestra variable. Suena más complicado de lo que parece, pero veamos el código.
 
-```
+```kotlin
 @Composable
 private fun rememberPlayerViewWithLifecycle(onDisposeCalled: (Long) -> Unit): PlayerView {
     val context = LocalContext.current
@@ -66,7 +66,7 @@ Ahora nos tenemos que enfrentar al problema del ciclo de vida. En el mundo sin C
 
 El código en el que creamos nuestro `LifecycleEventObserver` es el siguiente:
 
-```
+```kotlin
 @Composable
 private fun rememberPlayerLifecycleObserver(player: PlayerView): LifecycleEventObserver = remember(player) {
     LifecycleEventObserver { _, event ->
@@ -88,7 +88,7 @@ Ahora debemos asignar nuestro observable al ciclo de vida y removerlo una vez qu
 
 En nuestro caso queremos que el ciclo de vida elimine el observer que hemos creado así que podemos llamar la función `removeObserver` al final para eliminarlo.
 
-```
+```kotlin
 DisposableEffect(lifecycle) {
         lifecycle.addObserver(lifecycleObserver)
         onDispose {
@@ -99,7 +99,7 @@ DisposableEffect(lifecycle) {
 
 Un buen detalle a agregar sería poder obtener la posición del player en el momento en que se ha llamado el `onDispose`. Para esto vamos a acceder a esa propiedad del player dentro del onDispose y utilizar una lambda para exponer a quien esté llamando a la función, la posición del player actual.
 
-```
+```kotlin
 DisposableEffect(lifecycle) {
         lifecycle.addObserver(lifecycleObserver)
         onDispose {
@@ -112,7 +112,7 @@ DisposableEffect(lifecycle) {
 
 Al final nuestro composable encargado de crear un player quedaría asi:
 
-```
+```kotlin
 @Composable
 private fun rememberPlayerViewWithLifecycle(onDisposeCalled: (Long) -> Unit): PlayerView {
     val context = LocalContext.current
@@ -141,7 +141,7 @@ Ahora que hemos creado el Player view con sus observable atado al ciclo de vida 
 
 El `rememberSaveable` ayuda a restaurar el estado de la UI aun cuando una Activity o un proceso ha sido recreado. Para saber cómo funciona más a profundidad puedes revisar la documentación de Android en [este enlace](https://developer.android.com/jetpack/compose/state#restore-ui-state).
 
-```
+```kotlin
 var currentPosition by rememberSaveable { mutableStateOf(0L) }
     val castContext = generateRememberCastContext()
     generateCastPlayer(uri = uri, castContext = castContext)
@@ -155,7 +155,7 @@ Una vez dentro de nuestro PlayerContainer vamos a utilizar el AndroidView compos
 
 Dentro del callback `update` vamos a asignar a el `Player` a nuestro `playerAndroidView`, además aprovechamos y le decimos que se mueva a la posición que ya hemos seleccionado previamente. Quedándonos así.
 
-```
+```kotlin
 @Composable
 private fun PlayerContainer(playerView: PlayerView, player: SimpleExoPlayer, currentPosition: Long, modifier: Modifier) {
     AndroidView(modifier = modifier, factory = { playerView }) { playerAndroidView ->

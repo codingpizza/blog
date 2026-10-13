@@ -11,6 +11,8 @@ wpId: 4084
 ---
 Hoy en día estamos rodeados de redes sociales, de aplicaciones que nos hacen la vida mas fácil, de aplicaciones o páginas que nos enseñan algo que está pasando en tiempo real al otro lado del mundo. Tenemos la suerte de vivir en una época así, a veces sentimos que todo ha sido descubierto hasta ahora, que ya esto no puede estar mejor, ya de aquí ¿Qué más van a inventar? dicen algunas personas. La verdad es que queda mucho por descubrir, quizás tienes una idea de algo que puede revolucionar el mundo, pero sientes que no cuentas con las herramientas adecuadas para realizar tu idea, si tu idea implica el desarrollo de una aplicación, juego o página web, consigue la herramienta que te falta para realizar tu idea, aprende a programar.
 
+## Tabla de contenidos
+
 ## **La programación como herramienta**
 
 Así que un día te levantaste y camino a tu trabajo habitual pensaste «Sería genial que alguien hiciera *«esto»* «. ¿Por qué en vez de esperar de que alguien lo haga, no lo haces tu?. Solemos escuchar como otras personas se quejan comentando «No, es que no tengo tiempo, no se programar, no soy creativo». Si, probablemente no sepas programar o no tengas una mente tan creativa como otros, en eso puede que tengas razón. Pero te puedo asegurar algo y es que todas las personas tenemos la misma cantidad de horas al día y cada quien decide que hacer con ellas. Puedes tomar solo una hora al día y empezar a aprender a programar solo por diversión. Empieza desde ¿Cómo puedo hacer que mi teléfono haga esto? o ¿Cómo funcionará esta página? o quizás lo que pensaste alguien ya lo inventó, pero tu tienes una idea de como mejorarlo ¿Por qué no hacerlo?.

@@ -12,11 +12,13 @@ wpId: 4458
 ---
 ¡Hola! Esta semana vamos a hablar sobre **Collections**. Las **Collections** son muy importantes en la mayoría de proyectos en los que trabajamos. Como siempre, empecemos hablando sobre qué son la **Collections**.
 
+## Tabla de contenidos
+
 Las **Collections** son objetos que agrupan múltiples elementos dentro de ellos, un objeto List por ejemplo pertenece a los **Collections**.
 
 Digamos que tenemos una lista de números de lotería. Si creamos una lista con estos numeros se veria así.
 
-```
+```dart
 var lotteryNumbers = List.of({18,23,43,65});
 ```
 
@@ -28,7 +30,7 @@ En Dart, podemos crear una lista de diferentes maneras.
 
 Usando la palabra reservada *var* y el nombre de la lista crea una variable vacía.
 
-```
+```dart
 var myVarList;
 ```
 
@@ -42,7 +44,7 @@ Una lista vacia es cuando la lista ha sido creada pero no hay ningún elemento e
 
 Podemos crear una lista de ambas maneras, la primera forma creará una lista nula y la segunda creará una lista vacía.
 
-```
+```dart
 List nullList;
 List emptyList = [];
 ```
@@ -53,7 +55,7 @@ Si eres curioso, puedes intentar imprimir el tamaño de cada lista usando la pro
 
 En caso de que necesitemos crear una lista de un objeto específico, necesitamos especificarlo después de la lista de la siguiente manera.
 
-```
+```dart
 List<String> colorList = ["Red,Yellow,Purple"];
 ```
 
@@ -61,13 +63,13 @@ En este ejemplo estamos creando una lista de solo objetos Strings.
 
 En caso de que necesitemos crear una lista de varios tipos de objetos necesitamos utilizar la palabra reservada **dynamic**.
 
-```
+```dart
 List<dynamic> dynamicList = ["Red",1]
 ```
 
 Por último también podemos crear una lista utilizando la función **List.of.**
 
-```
+```dart
 List numberList = List.of({1,2,3,4});
 ```
 
@@ -81,7 +83,7 @@ En caso de que quieras obtener un elemento de una lista, existen varias formas d
 
 Aquí hay un ejemplo.
 
-```
+```dart
 List numberList = List.of({1,2,3,4,5});
 var firstNumber = numberList[0];
 var elementAt = numberList.elementAt(0);
@@ -93,7 +95,7 @@ El resultado de este ejemplo va a ser el primer elemento de nuestra lista, en nu
 
 Ahora vamos a ver cómo agregar un elemento a la lista que ya ha sido previamente creada. Todo lo que tenemos que hacer es usar la función **.add** y pasar como parámetro el número que queremos agregar.
 
-```
+```dart
 List numberList = List.of({1,2,3,4,5});
 var newNumber = 6;
 numberList.add(newNumber);
@@ -105,14 +107,14 @@ print(numberList);
 
 Esta vez vamos a hacer lo contrario, vamos a remover un elemento de la lista. Para esto necesitamos tener la posición del objeto en la lista y utilizar la función **.removeAt()**.
 
-```
+```dart
 List numberList = List.of({1,2,3,4,5});
 numberList.removeAt(1)
 ```
 
 ¿Cuál número crees que hemos eliminado de la lista? Si tu respuesta fue el número 1, estabas cerca, pero es incorrecto, hemos removido el número 2. Esto se debe a que las posiciones de las listas empiezan desde 0.
 
-```
+```dart
 Value  -> [1,2,3,4,5]
 Position->[0,1,2,3,4]
 ```
@@ -121,7 +123,7 @@ Position->[0,1,2,3,4]
 
 Presentamos los **Maps,** estos son una colección de clave-valor que nos ayudan a asociar una clave a un valor. Para crear los mapas hay que especificar el tipo de objeto de la clave y del valor, haciéndolo de la siguiente forma.
 
-```
+```dart
 Map<int,String> nullMap;
 //or
 Map<String,String> powerRangersMap = {"red": "Tyrannosaurus","blue":"Triceratops","pink":"pterodactyl"};
@@ -135,7 +137,7 @@ En ciertas ocasiones vamos a necesitar llamar solo a uno de nuestros Zords ¿no?
 
 Ejemplo:
 
-```
+```dart
 var powerRanger = powerRangerMap["red"];
 ```
 
@@ -145,7 +147,7 @@ En caso de que necesitemos remover un elemento del **Map** lo que debemos hacer 
 
 Ejemplo:
 
-```
+```dart
 Map<String,String> powerRangersMap = {"red": "Tyrannosaurus","blue":"Triceratops","pink":"pterodactyl"};
 powerRangersMap.remove("red");
 ```
@@ -156,7 +158,7 @@ Ha aparecido un nuevo Ranger y queremos agregarlo a nuestro grupo creado previam
 
 Ejemplo:
 
-```
+```dart
 var newRanger = Map<String,String>();
 newRanger["yellow"] = "Sabertooth Tiger";
 powerRangersMap.addAll(newRanger);
@@ -172,7 +174,7 @@ Hasta el momento hemos hablado de **Collections** sin mencionar los **Sets**. Un
 
 Ejemplo:
 
-```
+```dart
 Set colorSet = Set.from(["Red","Blue","Yellow","Black","Pink"]);
 ```
 
@@ -180,7 +182,7 @@ Set colorSet = Set.from(["Red","Blue","Yellow","Black","Pink"]);
 
 Para eliminar un elemento del **Set** debemos utilizar la función **.remove()** e indicar el elemento a eliminar.
 
-```
+```dart
 colorSet.remove("Red");
 ```
 
@@ -188,7 +190,7 @@ colorSet.remove("Red");
 
 Para agregar un elemento a un set todo lo que debemos hacer es utilizar la función **.add()** y pasarle el parámetro que queremos agregar.
 
-```
+```dart
 colorSet.add("White");
 ```
 

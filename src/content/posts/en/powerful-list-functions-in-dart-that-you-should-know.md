@@ -14,13 +14,15 @@ wpId: 4463
 
 In the previous post about Dart, we talked about **Collections** in Dart. We spoke about List, Maps, and sets. And today, we’re going to talk about some functions that are awesome and can help you in many cases.
 
+## Table of contents
+
 **Note**: In this post we use in various cases the anonymous function, if you are not familiarized with it, you can check my other post about **functions**.
 
 ## **Map**
 
 The **map** function exists in many programming languages, and Dart is not an exception. This function creates a new list after transform every element of the previous list. This function takes as a parameter an anonymous function. Let’s see an example.
 
-```
+```dart
 var list = List.of({1,2,3,4});
 var mappedList = list.map( (number) => number *2);
 print(mappedList);
@@ -33,7 +35,7 @@ In this example, we create an anonymous function that has a number as a paramete
 
 Sometimes you receive a list from the server, and you need to show it to the user. But what if you need to apply some filter and sort it in an ascending way? Well, this function can help you. Let’s see an example.
 
-```
+```dart
 var randomNumbers = List.of({14, 51, 23, 45, 6, 3, 22, 1});
 randomNumbers.sort();
 print(randomNumbers);
@@ -41,7 +43,7 @@ print(randomNumbers);
 
 This is the result.
 
-```
+```dart
 [1, 3, 6, 14, 22, 23, 45, 51]
 ```
 
@@ -51,7 +53,7 @@ This function is great when you need to create a list of numbers for a test. It 
 
 Here’s an example.
 
-```
+```dart
 var generatedList = List.generate(10, (number) => number * Random().nextInt(50));
   print(generatedList);
 ```
@@ -62,7 +64,7 @@ In the example we can see how we can generate a list of ten elements and multipl
 
 The **take** function literally takes the first elements from the list. This can be useful when you have a list of winners and want to take the top 3. Here’s how you can use it.
 
-```
+```dart
 var list = List.from([1,2,3,4,5,6]);
 var topThreeList = list.take(3);
 print(topThreeList);
@@ -74,7 +76,7 @@ The result of this example is: `1,2,3`
 
 The skip function is the opposite of the take function. This function ignores the first elements and creates a list of the remaining ones. This example shows how you can use it.
 
-```
+```dart
 var list = List.from([1,2,3,4,5,6]);
 var skipList = list.skip(3);
 print(skipList);
@@ -86,7 +88,7 @@ The result is: `4,5,6`
 
 This function is one of my favorites. It helps us to create a list of elements that satisfy a predicate. That means that your element list is going to have only elements that meet your requirements. Let’s say that you need to create a list of only even numbers.
 
-```
+```dart
 var randomNumbers = List.of({14, 51, 23, 45, 6, 3, 22, 1});
 var evenNumbers = randomNumbers.where((number => number.isEven));
 print(evenNumbers);
@@ -98,7 +100,7 @@ The result of this example is `14,6,22`.
 
 These function can be combined to achieve a greater solution. You can combine a **where** function with a **sort** function to get the even numbers sorted in ascending way.
 
-```
+```dart
 var randomNumbers = List.of({14, 51, 23, 45, 6, 3, 22, 1});
 var evenNumbers = randomNumbers.where((number) => number.isEven);
 evenNumbers = evenNumbers.toList()..sort();

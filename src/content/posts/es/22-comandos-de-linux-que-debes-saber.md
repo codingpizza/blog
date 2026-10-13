@@ -11,6 +11,8 @@ wpId: 3914
 ---
 ¡Hola amigos! En esta oportunidad quiero hablarles de los 22 comandos que más he utilizado en linux parte 1 y que al mi parecer todo usuario que esté empezando en linux debería empezar a utilizar ya que si queremos realizar ciertas tareas en un servidor o a través de ssh podamos realizarlas sin depender de una GUI.
 
+## Tabla de contenidos
+
 Empecemos con lo básico, como crear, modificar,leer y eliminar un archivo en un directorio también veremos como movernos entre los directorios mediante la terminal.
 
 ## Comandos para gestionar archivos

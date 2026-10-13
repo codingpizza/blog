@@ -11,6 +11,8 @@ wpId: 1
 ---
 ¡Hola! Soy Giuseppe Vetri un fanático de la computación, ingeniero en computación y apasionado por el desarrollo. Este es mi primer post en este blog llamado CodingPizza y mi primer post en general quise abrir este blog para contar un poco acerca de mis experiencias con el desarrollo y poder colaborar con otros desarrolladores que estén aprendiendo o se encuentren en un nivel mas avanzado acerca de software hablar sobre las buenas practicas y entender juntos algunas documentaciones que no son del todo amigables.Bueno, Basta de hablar de mi. Hablemos del tema de hoy el cual es ¡Algoritmos!, ¿Que son?  ¿Para que se usan? si has llegado hasta aquí a este blog seguramente tienes alguna noción de programación. De no ser así no te preocupes que aquí lo hablaremos desde el principio.
 
+## Tabla de contenidos
+
 La palabra algoritmo te puede sonar a computación, a código, a programación. Pero ¿sabias que usamos algoritmos todos los días?, Pues si.
 
 Los algoritmos son una serie ordenada de instrucciones o procesos que se realizan para solucionar un problema, pueden ser algo sencillo como tus rutinas matutinas por ejemplo:

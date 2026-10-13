@@ -11,6 +11,8 @@ wpId: 3977
 ---
 ¡Hola! Para estrenar esta sección de nuestro blog pensé en realizar una serie de tutoriales donde veremos como podemos seguir un camino para volvernos un desarrollador Android aprendiendo conceptos y elementos para luego implementarlos en aplicaciones de la vida real. En esta primera versión de esta serie de Post empezaremos hablando de como instalar Android Studio.
 
+## Tabla de contenidos
+
 Instalar Android Studio en Linux no tiene gran dificultad solo tenemos que instalar Java, descargar el SDK de Android y el IDE el cual sería Android Studio.
 
 ##### **Instalar Android Studio en Linux (Debian,Ubuntu,Xubuntu,Kubuntu)**

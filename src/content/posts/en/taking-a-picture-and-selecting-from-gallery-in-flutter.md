@@ -12,6 +12,8 @@ wpId: 4501
 ---
 Hi there! I’ve been working in an App that requires to take a picture from the app or pick it from the gallery. And here’s what I learned about it. There are many ways to take a photo using the camera. This time we’re going to use the ImagePicker plugin.
 
+## Table of contents
+
 # Let’s start with the dependencies.
 
 As the first step, we need to add new plugins to our dependencies. In our **pubspec.yaml** we’re going to add the next plugins:
@@ -22,7 +24,7 @@ As the first step, we need to add new plugins to our dependencies. In our **pub
 
 After we add it to our **pubspec.yaml**, it’s going to look like this.
 
-```
+```yaml
 name: fluttercamera
 description: A Flutter project that takes a picture and shows the preview.
 version: 1.0.0+1
@@ -61,7 +63,7 @@ This is how it should look like after doing that change.
 
 Let’s create our **PhotoPreviewScreen**, which is a StatefulWidget. In the beginning, it should look like this.
 
-```
+```dart
 class PhotoPreviewScreen extends StatefulWidget {
   @override
   _PhotoPreviewScreenState createState() => _PhotoPreviewScreenState();
@@ -79,7 +81,7 @@ class _PhotoPreviewScreenState extends State<PhotoPreviewScreen> {
 
 Now we’re going to create a **Scaffold** with a centered column that is going to show our image preview after we pick it from the gallery or take a picture from the camera. As of the last step, we’re going to add a **floatingActionButton**, which is going to show the selection dialog.
 
-```
+```dart
 class PhotoPreviewScreen extends StatefulWidget {
   @override
   _PhotoPreviewScreenState createState() => _PhotoPreviewScreenState();
@@ -115,7 +117,7 @@ In the **AlertDialog** constructor, we’re going to pass as content a **SingleC
 
 Each **GestureDetector** child is going to be a Text Widget with the «Gallery» text and «Camera» text, respectively, and each onTap() method is going to be **\_openGallery()** and **\_openCamera()**. Methods that we’re going to create in a while. Your **\_showSelectionDialog(context)** should look like this.
 
-```
+```dart
 Future<void> _showSelectionDialog(BuildContext context) {
     return showDialog(
         context: context,
@@ -155,7 +157,7 @@ Now let’s add the logic to our **\_openGallery(context)** method. What we’re
 
 The function **\_openGallery(context)** should look like this.
 
-```
+```dart
 void _openGallery(BuildContext context) async {
     var picture = await ImagePicker.pickImage(source: ImageSource.gallery);
     this.setState(() {
@@ -173,7 +175,7 @@ Remember the **\_setImageView()** that was at the beginning? Well, we’re going
 
 This is the result.
 
-```
+```dart
 Widget _setImageView() {
     if (imageFile != null) {
       return Image.file(imageFile, width: 500, height: 500);

@@ -12,6 +12,8 @@ wpId: 4153
 ---
 ¡Hola! esta vez traemos de vuelta nuestros post sobre el desarrollo de aplicaciones Android, para seguir aprendiendo sobre como crear aplicaciones en esta plataforma. En esta oportunidad hablaremos del ciclo de vida de las Activities el cual es muy importante para el desarrollo de nuestras aplicaciones para que se comporten como es debido, tener el conocimiento del ciclo de vida nos ayudara a responder a los diversos cambios del sistema, como cuando tu aplicación se pone en segundo plano o cuando tu aplicación es cerrada.
 
+## Tabla de contenidos
+
 ## **El ciclo de vida**
 
 Cuando tu aplicación es creada y ejecutada pasa por varias etapas del ciclo de vida aquí debajo puedes ver un diagrama de como funciona dicho ciclo de vida.

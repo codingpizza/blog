@@ -12,6 +12,8 @@ wpId: 4486
 ---
 Storing text in the Database is one of the most current operations that we, as developers, are going to do. Sometimes we need to save the data from the server so the users can open the app and if there’s data already stored we can show that first, or if we want to implement an have an offline mode.
 
+## Table of contents
+
 Today we’re going to see how to store data in Flutter. Our app is going to be a Todo app, where we store these todos to watch them later.
 
 What we’re going to need:
@@ -25,7 +27,7 @@ What we’re going to need:
 
 First, we’re going to create our Todo class:
 
-```
+```dart
 class Todo {
   final int id;
   final String content;
@@ -44,7 +46,7 @@ This is the Todo Class which has a content and a title as properties.
 
 Before creating our DatabaseHelper, we’re going to add our dependencies to the pubspec.yml to do that we need to add the following lines below the flutter dependency.
 
-```
+```yaml
 dependencies:
   flutter:
     sdk: flutter
@@ -54,7 +56,7 @@ dependencies:
 
 Now we’re going to create our **DatabaseHelper**, which is going to manage the Database for us.
 
-```
+```dart
 class DatabaseHelper {
   //Create a private constructor
   DatabaseHelper._();
@@ -95,7 +97,7 @@ Then we call the **insert()** function, which takes three parameters:
 
 Finally, we can create our Screen to fill our **Todo** object. Since the fields are editable, the Widget must be a **StatefulWidget**, so we create our **StatefulWidget** with its respective State. The widgets that we’re going to use are the **TextFields** and a **FloatingActionButton** to save the Todo.
 
-```
+```dart
 class CreateTodoScreen extends StatefulWidget {
 
   @override
@@ -176,7 +178,7 @@ What we’re going to do first is to add another Button to our **HomeScreen.** F
 
 The **ReadTodoButton** Widget is going to look like this:
 
-```
+```dart
 class ReadTodoButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -199,7 +201,7 @@ class ReadTodoButton extends StatelessWidget {
 
 Then we’re going to add it to the children’s array of our HomeScreen Widget. And the result would be this:
 
-```
+```dart
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -220,7 +222,7 @@ class HomeScreen extends StatelessWidget {
 
 Now we’re going to add a new function in our **DatabaseHelper** class, which is going to return the previously saved **Todo’s**. First, we’re going to create a function that returns a list of Todo items wrapped in a Future object, and since it returns a Future, that function should include the async reserved keyword in their signature.
 
-```
+```dart
 Future<List<Todo>> retrieveTodos() async {
     // Logic we will add later
 }
@@ -228,13 +230,13 @@ Future<List<Todo>> retrieveTodos() async {
 
 Then we will retrieve our Database object, and since it is an async operation, we’re going to use the await keyword.
 
-```
+```dart
 final Database db = await database;
 ```
 
 The next step we’re going to do is create a list of maps that have a key which is a String and a value that is going to be **dynamic**, we obtain that value from a query function of the database. It will look as follows.
 
-```
+```dart
 final List<Map<String, dynamic>> maps = await db.query(Todo.TABLENAME);
 ```
 
@@ -248,7 +250,7 @@ For the size of the list we can use the **maps.length**, which gives us the leng
 
 The code will look like this:
 
-```
+```dart
 return List.generate(maps.length, (i) {
       return Todo(
         id: maps[i]['id'],
@@ -274,7 +276,7 @@ We must also return a **CircularProgressIndicator** to show while the operation 
 
 The code of the screen is the following:
 
-```
+```dart
 class ReadTodoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -312,7 +314,7 @@ class ReadTodoScreen extends StatelessWidget {
 
 To update our Todo’s, we need to make certain modifications. First, we’re going to add this new function to the DatabaseHelper.
 
-```
+```dart
 updateTodo(Todo todo) async {
     final db = await database;
 
@@ -333,7 +335,7 @@ In this function, we obtain the Database, then we call the function **update()**
 
 At this time, we need to update our UI. First, we’re going to modify our **DetailTodoScreen** to allow us to edit our Todo. We need to add a **Todo** as an optional parameter in our **DetailTodoScreen** constructor, then create a final **Todo** property in our Widget, and since it is a **StatefulWidget**, pass it to the State.
 
-```
+```dart
 class DetailTodoScreen extends StatefulWidget {
     final Todo todo;
 
@@ -346,7 +348,7 @@ class DetailTodoScreen extends StatefulWidget {
 
 In our State we need to add the Todo as a parameter in the constructor, create the Todo property and override the initState in which we’re going to set the title and the description if the Todo exists.
 
-```
+```dart
 class _CreateTodoState extends State<DetailTodoScreen> {
   Todo todo;
   final descriptionTextController = TextEditingController();
@@ -368,7 +370,7 @@ Finally, in the onPressed anonymous function, we need to call a new function, wh
 
 This is how our State is going to look.
 
-```
+```dart
 class _CreateTodoState extends State<DetailTodoScreen> {
   Todo todo;
   final descriptionTextController = TextEditingController();
@@ -448,7 +450,7 @@ class _CreateTodoState extends State<DetailTodoScreen> {
 
 To delete a Todo, we need to add the delete function to our DatabaseHelper.
 
-```
+```dart
 deleteTodo(int id) async {
     var db = await database;
     db.delete(Todo.TABLENAME, where: 'id = ?', whereArgs: [id]);
@@ -459,7 +461,7 @@ This function calls the **delete** function from the Sqflite library in which we
 
 Then in our UI, we’re going to add a delete button in our **Todo** List. In our **ListTile** Widget, we’re going to pass as a trailing parameter an **IconButton** Widget. Finally, in the **onPressed** parameter, we’re going to add an anonymous function that calls the deleteTodo from the **DatabaseHelper** class.
 
-```
+```dart
 class  ReadTodoScreen extends StatefulWidget {
   @override
   _ReadTodoScreenState createState() => _ReadTodoScreenState();

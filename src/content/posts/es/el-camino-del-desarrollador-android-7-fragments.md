@@ -13,6 +13,8 @@ wpId: 4163
 
 ¡Hola! En esta oportunidad nos toca hablar de uno de los componentes de Android que mucha gente odia, los Fragments.
 
+## Tabla de contenidos
+
 Los Fragments podríamos decir que son piezas reutilizables de UI como los Layouts o los Viewgroups. Estos se pueden organizar de forma distinta dependiendo del tamaño de pantalla si así se quiere.
 
 Generalmente, estos Fragments se utilizan en dos formas en específico. Puedes utilizarlos dentro de la misma actividad e intercambiarlos para dar la sensación de que se ha cambiado de actividad o puedes utilizarlos como se utilizan en las tablets el cual es un menú de un lado y el contenido de otro a esto se le llama “MasterFlow” en este post vamos a tratar solo el primer caso.

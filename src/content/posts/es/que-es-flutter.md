@@ -13,6 +13,8 @@ wpId: 4092
 
 Flutter es un SDK creado por Google para desarrollar aplicaciones con una gran calidad en las interfaces, tanto para Android como para iOS. (Si, para iOS). Curiosa apuesta de parte de nuestro amigo Google, ¿no?.
 
+## Tabla de contenidos
+
 Flutter es un SDK completo con frameworks, widgets y herramientas que le da a los desarrolladores una manera sencilla de crear aplicaciones con una linda interfaz en ambas plataformas. Esta pensado para que los desarrolladores tengan una manera rápida de construir aplicaciones para ambas plataformas sin sacrificar la interfaz.
 
 También desde la página de Flutter, podemos obtener leer lo siguiente «Aunque no sean el objetivo principal para este framework. Flutter También esta hecho para los diseñadores que quieren que sus visiones de diseño sean realizadas consistentemente y con una alta fidelidad a sus usuarios».

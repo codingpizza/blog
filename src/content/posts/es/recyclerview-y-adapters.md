@@ -11,6 +11,8 @@ wpId: 4039
 ---
 Hola amigos, bienvenidos otra vez a otro tutorial de esta serie sobre Android en este caso por fin, toca hablar de uno de los elementos más usados en todo el mundo del desarrollo Android, RecyclerViews.
 
+## Tabla de contenidos
+
 #### **¿Que son estos famosos RecyclerViews?**
 
 Los RecycerViews son elementos que permiten mostrar una lista de elementos en una aplicación, por ejemplo. Mostrar una lista de fotos, dónde el usuario puede interactuar con cada foto, darle «Me gusta», compartir la foto y comentar sobre la foto. ¿Les suena parecido este ejemplo? pues seguramente si, Instagram, Facebook, La aplicación que usas para ordenar pizza los domingos probablemente también utilice un RecyclerView para mostrarte todas sus pizzas.

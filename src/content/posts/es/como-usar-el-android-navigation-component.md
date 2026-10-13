@@ -17,6 +17,8 @@ wpId: 4313
 
 A lo largo de los años los desarrolladores Android han buscado una forma de hacer más fácil la navegación entre los fragments y las activities dentro de las aplicaciones que creaban. Muchos inventaron una cantidad de clases y variantes llamadas Navigation, Base Navigation, Navigation Manager.
 
+## Tabla de contenidos
+
 Entre cualquier cantidad de ingeniosos nombres que el ser humano se puede inventar, cada uno tenía sus peculiaridades con sus ventajas y sus desventajas, muchas de estas necesitaban que el desarrollador heredara de una clase base o agregara manualmente constantes a una clase para así identificar a donde iría y de a donde vendría, esto solía generar muchos bugs respecto a la navegación de la app.
 
 Por ejemplo, si una App que mostraba el detalle de una compra al ir hacia atrás lo que se espera es que te llevara al paso anterior a ese detalle de compra, es decir a los objetos que habías seleccionado para comprar, y en algunos casos estas famosas clases de navegación fallaban enviando al usuario a la pantalla principal de la aplicación o peor aún a otra pantalla que no tenía nada que ver con este flujo, esto suponía un problema.

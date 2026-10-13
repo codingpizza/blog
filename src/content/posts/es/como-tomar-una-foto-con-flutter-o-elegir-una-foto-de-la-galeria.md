@@ -12,6 +12,8 @@ wpId: 4514
 ---
 ¡Hola! Ultimamente he estado trabajando en una app que requiere tomar una foto desde la app o de la galeria y mostrarla al usuario. He aprendido un par de cosas implementando esta feature y he querido compartirlo por acá. Existen varias formas de tomar una foto utilizando la cámara pero en esta oportunidad vamos a utilizar el **imagePicker** plugin.
 
+## Tabla de contenidos
+
 # Empecemos por las dependencias.
 
 Como primer paso, vamos a agregar los plugins a nuestras dependencias. Abrimos nuestro **pubspec.yaml** y agregamos los siguientes plugins:
@@ -22,7 +24,7 @@ Como primer paso, vamos a agregar los plugins a nuestras dependencias. Abrimos n
 
 Despues de agregar estos plugins nuestro **pubspec.yaml** debería verse así.
 
-```
+```yaml
 name: fluttercamera
 description: A Flutter project that takes a picture and shows the preview.
 version: 1.0.0+1
@@ -63,7 +65,7 @@ Luego de cambiar la versión debería verse así
 
 Para empezar vamos a crear un **StatefulWidget** llamado **PhotoPreviewScreen**. Debería verse de esta manera.
 
-```
+```dart
 class PhotoPreviewScreen extends StatefulWidget {
   @override
   _PhotoPreviewScreenState createState() => _PhotoPreviewScreenState();
@@ -81,7 +83,7 @@ class _PhotoPreviewScreenState extends State<PhotoPreviewScreen> {
 
 Ahora, vamos a crear un **Scaffold** con un widget Column centrado el cual va a mostrar una vista previa de nuestra imagen después que tomemos una foto o la seleccionemos de la galería. Y como paso final vamos a agregar un **floatingActionButton**, que al tocar nos mostrará un dialogo con las opciones para elegir una foto de la galería o desde la cámara.
 
-```
+```dart
 class PhotoPreviewScreen extends StatefulWidget {
   @override
   _PhotoPreviewScreenState createState() => _PhotoPreviewScreenState();
@@ -119,7 +121,7 @@ En el constructor del **AlertDialog**, vamos a pasar como contenido un **SingleC
 
 Cada **GestureDetector** va a tener un Text Widget con el texto «Galería» y «Cámara» respectivamente. Y cada Text widget tambíen tendrá como parámetro de su función onTap el método **\_openGallery()** y **openCamera()** segun corresponda. Estos métodos los crearemos más adelante. Al terminar el método **\_showSelectionDialog(context)** estará así.
 
-```
+```dart
 Future<void> _showSelectionDialog(BuildContext context) {
     return showDialog(
         context: context,
@@ -157,7 +159,7 @@ Ahora al tocar nuestro FloatingActionButton debería mostrar un Dialog como este
 
 Ahora vamos a agregarle la lógica a nuestro método **\_openGallery(context).** Lo primero que vamos a hacer es crear un **Field** llamado imageFile, el cual va a ser una variable de tipo **File** en nuestro **\_LandingScreenState.** Luego vamos a utilizar la función del **ImagePicker**, llamada **pickImage()** y le vamos a pasar como parámetro el enum **[ImageSource.gallery](http://imagesource.gallery).** Esta función es asíncrona así que vamos a tener que utilizar las palabras reservadas async y await. Luego vamos a almacenar esta variable y asignarla a nuestra variable **imageFile**. Como paso final, vamos a llamar al método **setState()** para notificar que el **State** ha cambiado. Y nuestra función deberá verse así.
 
-```
+```dart
 void _openGallery(BuildContext context) async {
     var picture = await ImagePicker.pickImage(source: ImageSource.gallery);
     this.setState(() {
@@ -169,7 +171,7 @@ void _openGallery(BuildContext context) async {
 
 La función \_openCamera(Context) es casi igual, la unica diferencía que tiene al respecto es que esta utiliza el enum [imageSource.camera](http://imagesource.camera) en lugar de gallery. Al realizar este cambio tu función de **\_openCamera()** deberá verse así.
 
-```
+```dart
 void _openCamera(BuildContext context) async {
     var picture = await ImagePicker.pickImage(source: ImageSource.camera);
     this.setState(() {
@@ -185,7 +187,7 @@ void _openCamera(BuildContext context) async {
 
 Así se vería la función terminada.
 
-```
+```dart
 Widget _setImageView() {
     if (imageFile != null) {
       return Image.file(imageFile, width: 500, height: 500);

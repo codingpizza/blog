@@ -12,6 +12,8 @@ wpId: 4406
 ---
 In this section, we’re going to talk about functions, how it works on Dart and the function types.
 
+## Table of contents
+
 ## ?What is a function?
 
 A function is a block of code that should be organized, perform a single task, and should be related to the class we’re working on.
@@ -64,7 +66,7 @@ As we say before the functions should have a name, but in the case of the Anonym
 
 This is going to have the following output:
 
-```
+```dart
 We have the chocolate flavour
 We have the vanilla flavour
 We have the orange flavour

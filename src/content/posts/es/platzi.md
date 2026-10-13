@@ -10,6 +10,8 @@ wpId: 4540
 ---
 Hace poco mas de un año se realizó una conferencia de Platzi en Madrid, donde actualmente vivo. Me pareció interesante el contenido de la charla y fui a verla con mi novia, yo ya había escuchado de Platzi cuando vivía en Venezuela ya que recuerdo cuando un estudiante de la universidad donde yo me gradué fue contratado para ir a Colombia, donde tienen una de sus oficinas.
 
+## Tabla de contenidos
+
 ![Freddy Vega dando una charla](/images/freddy_vega_talk.jpg)
 
 ## ¿Qué es [Platzi](https://platzi.com)?

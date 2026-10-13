@@ -14,6 +14,8 @@ wpId: 4441
 
 Hi there!, in the last month I’ve been writing about Dart and how things work in this language. If you’re new here, you can check my other post about Dart. I’ll leave it down below.
 
+## Table of contents
+
 ### [**Variables**](https://www.codingpizza.com/en/dart-variables/)
 
 ### [**Functions**](https://www.codingpizza.com/en/functions-in-dart/)
@@ -28,7 +30,7 @@ Let’s say we need to choose between going outside with an umbrella or not. We 
 
 If we want to write that in code, this can be.
 
-```
+```dart
 if (isGoingToRainToday()) {
  takeUmbrella() 
 } else {
@@ -40,7 +42,7 @@ if (isGoingToRainToday()) {
 
 The **if statements** help our code to make a decision, it has the following syntax.
 
-```
+```dart
 if (condition) {
  doThis()
 } else {
@@ -52,7 +54,7 @@ We start with the reserved keyword if, then we add a condition inside the parent
 
 In the previous example, we wanted to check the weather to know if we needed to take the umbrella with us. But what isGoingToRainToday() is? Well is a function which returns a boolean. It looks like this.
 
-```
+```dart
 Boolean isGoingToRainToday() {
 	return false
 } 
@@ -62,7 +64,7 @@ Here’s a tip the else statement is not always needed. If you only need to exec
 
 If you need to make a comparison with more than two options you can also use an **else if** statement, let’s see how it is.
 
-```
+```dart
 var flavor = "Vanilla";
 if (flavor == "Vanilla"){
 	print("Here's your vanilla ice cream");
@@ -82,7 +84,7 @@ What happen if we have too many flavors?
 The switch statements work with variables instead of a condition if the switch has a «case» for the value of the variable the code inside that case is going to be executed. If the switch can’t found a case for it, the code inside the default case is executed.  
 Here’s an example.
 
-```
+```dart
 var flavor = "Vanilla"
 switch (flavor) {
 	case "Vanilla":
@@ -100,7 +102,7 @@ switch (flavor) {
 
 The for statement is a common statement that exists in almost every language. Is used to iterate an array of objects. The syntax in Dart is as follows:
 
-```
+```dart
 for (var i = 0; i < list.length; i++){
  print(list[i]);
 }
@@ -116,7 +118,7 @@ The **for statement** is useful when you know when it’s going to end. In our
 
 The While statement on the other side works better when you don’t know when a condition is going to meet. It will execute the code inside the braces until the condition is met, for example.
 
-```
+```dart
 int laps = 0;
 while (laps < 5){
 	print("Laps $laps");
@@ -126,7 +128,7 @@ while (laps < 5){
 
 In this example, the code inside the while is executed until the laps are less than five.
 
-```
+```dart
 Laps 0
 Laps 1
 Laps 2
@@ -138,7 +140,7 @@ Laps 4
 
 Introducing the sibling of the While statement, the Do while statement. This statement executes the code and after the statement evaluates it. Here’s an example.
 
-```
+```dart
 int countDown = 5;
 do {
  print("Time remaining: $countDown");
@@ -148,7 +150,7 @@ do {
 
 This code is going to print the countDown variable while it’s different than zero. Here’s the result.
 
-```
+```dart
 Time remaining: 5
 Time remaining: 4
 Time remaining: 3

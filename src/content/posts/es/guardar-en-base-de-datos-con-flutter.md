@@ -13,6 +13,8 @@ wpId: 4490
 
 Photo by Tim Evans on Unsplash.
 
+## Tabla de contenidos
+
 Almacenar texto en la base de datos es junto a las llamadas a red, una de las operaciones que como desarrolladores más tenemos que realizar. Algunas veces, necesitamos guardar la información de los servidores en nuestra app para que los usuarios puedan abrir la app y ver información previamente guardada antes de que se actualice con nuevo contenido, o podemos también tener que implementar un modo offline.
 
 En este artículo, vamos a hablar sobre cómo almacenar información en una app con Flutter. Nuestra app será una aplicación que almacenará unas Tareas por realizar (Todo’s), las cuales podremos consultar luego.
@@ -28,7 +30,7 @@ Una lista de las cosas que vamos a necesitar:
 
 Primero, vamos a crear nuestra clase Todo.
 
-```
+```dart
 class Todo {
   final int id;
   final String content;
@@ -47,7 +49,7 @@ Esta es la clase Todo la cual contiene un id, el contenido del Todo y el título
 
 Con la clase Todo creada, vamos a agregar nuestra dependencia de la siguiente forma en el archivo pubspec.yml.
 
-```
+```yaml
 dependencies:
   flutter:
     sdk: flutter
@@ -57,7 +59,7 @@ dependencies:
 
 Ahora tenemos que crear nuestra clase **DatabaseHelper,** la cual tiene la función de tratar con la base de datos.
 
-```
+```dart
 class DatabaseHelper {
   //Create a private constructor
   DatabaseHelper._();
@@ -100,7 +102,7 @@ La función **insertTodo()** toma como parámetro un objeto **Todo.** Obtiene la
 
 Finalmente, podemos crear nuestra Screen la cual nos servirá para crear nuestro Todo object. Dado que los campos serán editables necesitaremos utilizar un StatefulWidget con su respectivo State. Los widgets que vamos a utilizar son Textfields y FloatingActionButton para guardar el Todo.
 
-```
+```dart
 class CreateTodoScreen extends StatefulWidget {
 
   @override
@@ -179,7 +181,7 @@ Al momento de crear nuestros **TextFields**, le pasamos a cada TextField su resp
 
 Para actualizar nuestros Todo’s necesitamos hacer ciertas modificaciones. Primero, vamos a agregar esta nueva función a nuestro **DatabaseHelper**.
 
-```
+```dart
 updateTodo(Todo todo) async {
     final db = await database;
 
@@ -200,7 +202,7 @@ En esta función obtenemos el objeto database y luego llamamos a la función **u
 
 Ahora debemos actualizar nuestra UI. Primero, vamos a modificar nuestra **DetailTodoScreen** para poder editar nuestro Todo. Necesitaremos agregar nuestro **Todo** como un parámetro opcional en el constructor del **DetailTodoScreen**, luego crear una property **Todo** en nuestro Widget y debido a que es un **StatefulWidget** debemos pasarle este **Todo** al State.
 
-```
+```dart
 class DetailTodoScreen extends StatefulWidget {
     final Todo todo;
 
@@ -213,7 +215,7 @@ class DetailTodoScreen extends StatefulWidget {
 
 En nuestro State necesitamos agregar también nuestro Todo al constructor, crear la property Todo y sobrescribir la función initState de nuestro Widget para que podamos asignar el Título y la descripción de nuestro **Todo** a los respectivos **TextField**.
 
-```
+```dart
 class _CreateTodoState extends State<DetailTodoScreen> {
   Todo todo;
   final descriptionTextController = TextEditingController();
@@ -235,7 +237,7 @@ Finalmente, en la función anónima que le pasamos como parámetro onPressed vam
 
 Así es como se verá nuestro State luego de esas modificaciones.
 
-```
+```dart
 class _CreateTodoState extends State<DetailTodoScreen> {
   Todo todo;
   final descriptionTextController = TextEditingController();
@@ -315,7 +317,7 @@ class _CreateTodoState extends State<DetailTodoScreen> {
 
 Para borrar un Todo necesitamos comenzar por borrar una función de nuestra clase **DatabaseHelper.**
 
-```
+```dart
 deleteTodo(int id) async {
     var db = await database;
     db.delete(Todo.TABLENAME, where: 'id = ?', whereArgs: [id]);
@@ -326,7 +328,7 @@ Esta función llama a la función **delete** de la librería Sqflite a la cual l
 
 Luego, para agregar una función de borrado en nuestra lista de todos vamos a necesitar realizar los siguientes pasos. Primero, en nuestro **ListTile** widget vamos a necesitar a utilizar un parámetro opcional llamado **trailing,** en este parámetro vamos a pasarle un **IconButton**, dentro de ese parámetro **onPressed** vamos a pasarle una función anónima que llamará a la función del **DatabaseHelper** encargada de borrar el **Todo**.
 
-```
+```dart
 class  ReadTodoScreen extends StatefulWidget {
   @override
   _ReadTodoScreenState createState() => _ReadTodoScreenState();

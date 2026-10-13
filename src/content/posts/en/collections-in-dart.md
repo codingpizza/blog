@@ -12,6 +12,8 @@ wpId: 4452
 ---
 Hello everyone, this week we’re going to talk about Collections. Collections are a crucial part of every project. As always let’s start with what are **Collections**.
 
+## Table of contents
+
 Collections are objects that groups multiple elements inside of them; a List is one of them.
 
 Let’s say we have a list of lottery numbers. We can create a list from it.
@@ -64,7 +66,7 @@ This time we’re going to do the opposite, we’re going to remove an element f
 
 Which number do you think we removed from this list? If your answer is number 1. You were close, but that’s incorrect, we removed the number 2 because the list position starts from 0.
 
-```
+```dart
 Value  -> [1,2,3,4,5]
 Position->[0,1,2,3,4]
 ```

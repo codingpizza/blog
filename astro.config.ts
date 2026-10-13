@@ -9,7 +9,6 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { unified } from "@astrojs/markdown-remark";
 import remarkToc from "remark-toc";
-import remarkCollapse from "remark-collapse";
 import rehypeCallouts from "rehype-callouts";
 import {
   transformerNotationDiff,
@@ -17,6 +16,7 @@ import {
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
+import { remarkCollapseTableOfContents } from "./src/utils/remarkCollapseTableOfContents";
 import config from "./astro-paper.config";
 
 // The site is served from the domain root in production. The GitHub Pages
@@ -44,8 +44,9 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [
-        remarkToc,
-        [remarkCollapse, { test: "Table of contents" }],
+        // the table of contents is generated where the post has this heading
+        [remarkToc, { heading: "(table[ -]of[ -])?contents?|toc|tabla de contenidos" }],
+        remarkCollapseTableOfContents,
       ],
       rehypePlugins: [rehypeCallouts],
     }),

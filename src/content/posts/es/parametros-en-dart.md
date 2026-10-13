@@ -13,6 +13,8 @@ wpId: 4433
 ---
 ¡Hola!, en los ultimos post he hablado sobre **variables** y **funciones.** Si te los has perdido, te dejo el link a ellos aqui debajo para que puedas echarle un ojo.
 
+## Tabla de contenidos
+
 -   **[Variables](https://www.codingpizza.com/variables-en-dart/)**
 -   **[Funciones](https://www.codingpizza.com/funciones-en-dart/)**
 
@@ -26,7 +28,7 @@ Los parámetros requeridos son los mas basicos que una función puede usar, solo
 
 Los **parámetros requeridos** los hemos visto ya en el caso de la función **suma**.
 
-```
+```dart
 Integer suma(Integer a,Integer b) {
     return a+b;
 }
@@ -40,7 +42,7 @@ Los parámetros opcionales no son requeridos por la función al momento de usarl
 
 Para hacer un **parámetro opcional** es necesario colocarlo al final de la firma de la función y entre corchetes. Para dejarlo mas claro veamos el siguiente ejemplo:
 
-```
+```dart
 void imprimirNombreCompleto(String nombre, String apellido, [String segundoNombre]){
     print("Mi nombre es: $name $secondName $surname");
 }
@@ -54,7 +56,7 @@ Para evitar esto podemos agregar un valor por defecto que va a ser utilizado en 
 
 Para agregar un valor por defecto a un **parámetro opcional,** todo lo que necesitamos hacer es una asignación. Para entenderlo mejor puedes ver el siguiente ejemplo:
 
-```
+```dart
 void imprimirNombreCompleto(String nombre, String apellido, [String segundoNombre = ""]){
     print("Mi nombre es: $nombre $segundoNombre $apellido");
 }
@@ -64,7 +66,7 @@ Ahora el valor será un String vacio y el texto será mostrado correctamente.
 
 Para usar la función con **parámetros opcionales** que hemos creado previamente hacemos lo siguiente.
 
-```
+```dart
 imprimirNombreCompleto("John","Wick");
 //O
 imprimirNombreCompleto("Scarlett","Johansson","Ingrid");
@@ -72,7 +74,7 @@ imprimirNombreCompleto("Scarlett","Johansson","Ingrid");
 
 En el caso que quieras utilizar todos los parámetros de la funcion como **opcionales** puedes encerrarlos entre corchetes como muestra el siguiente ejemplo.
 
-```
+```dart
 void imprimirNombreCompleto([String nombre, String segundoNombre, String Apellido]){
     print("Mi nombre es: $nombre $segundoNombre $apellido");
 } 
@@ -84,7 +86,7 @@ Este tipo de parámetros permite indicarle a la función cual es el parámetro q
 
 Ejemplo:
 
-```
+```dart
 void imprimirParametrosNombrados(String nombre,String apellido,{String segundoNombre = ""}){
     print("$nombre $segundoNombre $apellido")
 }
@@ -94,7 +96,7 @@ En este ejemplo hemos usado el nombre y el apellido como parámetros requeridos.
 
 Cuando queremos utilizar una función con parámetros requeridos debemos hacerlo de la siguienta manera:
 
-```
+```dart
 imprimirParametrosNombrados("Samuel","Jackson",segundoNombre: "Leroy");
 ```
 
@@ -102,7 +104,7 @@ En este ejemplo podemos ver que necesitamos indicar el nombre del parámetro den
 
 En el caso en que necesitemos tener una función con solo **parámetros nombrados** lo que tenemos que hacer es incluir dentro de las llaves todos los **parámetros**.
 
-```
+```dart
 void imprimirParametrosNombrados({String nombre,String apellido,String segundoNombre = ""}){
     print("$nombre $segundoNombre $apellido")
 }
@@ -112,7 +114,7 @@ Cuando una función tiene unicamente parámetros nombrados no importa el orden e
 
 Por ejemplo:
 
-```
+```dart
 imprimirParametrosNombrados(nombre: "Scarlett",segundoNombre:"Ingrid",apellido:"Johansson");
 ```
 

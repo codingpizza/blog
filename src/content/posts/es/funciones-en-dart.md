@@ -12,6 +12,8 @@ wpId: 4411
 ---
 En esta oportunidad vamos a hablar sobre las funciones,como funcionan en Dark y sus tipos.
 
+## Tabla de contenidos
+
 ## ?¿Qué es una función?
 
 Una función es un bloque de código que debe ser organizado, realizar una sola tarea y debe estar relacionado a la clase en la que estamos trabajando.¿Por qué digo *«debería»* ? Porque mucha gente tiende a olvidarse de esto y creeme que te encontrarás muchos de estos casos en tu vida profesional.
@@ -65,7 +67,7 @@ Como hemos hablado previamente todas las funciones deben tener un nombre, pero n
 
 La función de la que hemos hablado imprime el siguiente resultado:
 
-```
+```dart
 We have the chocolate flavour
 We have the vanilla flavour
 We have the orange flavour
