@@ -116,6 +116,6 @@ Para obtener el drawableId que hemos pasado al fragment de DetailFragment lo hac
 ## Final
 
 Esto es el uso básico del Navigation Component. También puede ser usado en el caso que quieras con un Drawer o con un Bottom Navigation View, pero eso da para otro artículo ?.  
-Y con esto hemos terminado. En los próximos artículos hablaré un poco acerca de otros Android Architecture components. Si te ha gustado este artículo compartelo en las redes sociales. No olvides seguir el twitter y el instagram de codingpizza que lo encontrarás al final del sitio.
+Y con esto hemos terminado. En los próximos artículos hablaré un poco acerca de otros Android Architecture components. Si te ha gustado este artículo compartelo en las redes sociales. Y si tienes alguna duda o sugerencia, escríbeme a [contact@codingpizza.com](mailto:contact@codingpizza.com).
 
 [Aquí puedes encontrar todo el codigo que ha sido utilizado en este articulo.](https://github.com/codingpizza/android-component-navigation)
