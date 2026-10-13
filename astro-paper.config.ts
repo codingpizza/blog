@@ -2,7 +2,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://www.codingpizza.com/",
+    url: "https://codingpizza.com/",
     title: "Codingpizza",
     description: "Artículos sobre programación en Android y Kotlin",
     author: "Giuseppe Vetri",
