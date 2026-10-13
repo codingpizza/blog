@@ -1,0 +1,44 @@
+---
+import { getEntry, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import config from "@/config";
+
+// Renders a page from the `pages` collection. The WordPress pages kept their
+// old URLs, so each one gets a small route file next to this component.
+type Props = {
+  entryId: string;
+};
+
+const { entryId } = Astro.props;
+
+const entry = await getEntry("pages", entryId);
+
+if (!entry) {
+  throw new Error(
+    `Missing content entry: \`${entryId}.md\` in \`src/content/pages/\``
+  );
+}
+
+const { Content } = await render(entry);
+---
+
+<Layout
+  title={`${entry.data.title} | ${config.site.title}`}
+  description={entry.data.description}
+  ogImage={entry.data.ogImage}
+  canonicalURL={entry.data.canonicalURL}
+>
+  <Header />
+
+  <Breadcrumb />
+
+  <Main pageTitle={entry.data.title} class="app-prose">
+    <Content />
+  </Main>
+
+  <Footer />
+</Layout>

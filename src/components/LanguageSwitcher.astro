@@ -1,0 +1,81 @@
+---
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { stripBase, stripLocale } from "@/utils/withBase";
+import {
+  getPostLocale,
+  getPostSlugPath,
+  getPostUrl,
+} from "@/utils/getPostPaths";
+import { getUniqueTags } from "@/utils/getUniqueTags";
+import { filterPostsByLocale } from "@/utils/postsByLocale";
+import { useTranslations } from "@/i18n";
+import config from "@/config";
+
+// Link to the same page in the other language.
+// Articles use the `translationOf` field; pages that exist in both languages
+// keep the same path. When no counterpart exists the reader lands on the other
+// language home page, so the link never leads to a missing page.
+const locale = Astro.currentLocale ?? config.site.lang;
+const otherLocale = locale === "es" ? "en" : "es";
+const t = useTranslations(locale);
+
+const relative = stripBase(Astro.url.pathname);
+const trimmed =
+  relative !== "/" && relative.endsWith("/") ? relative.slice(0, -1) : relative;
+const path = stripLocale(trimmed, locale).replace(/^\/+|\/+$/g, "");
+
+const posts = await getCollection("posts", ({ data }) => !data.draft);
+
+/** Routes that exist in both languages at the same path. */
+const sharedRoutes = ["posts", "tags", "archives", "search", "about"];
+const [root, second] = path.split("/");
+
+let target = getRelativeLocaleUrl(otherLocale, "");
+
+if (sharedRoutes.includes(root)) {
+  if (root === "tags" && second) {
+    // a tag page only exists in the other language when that language uses it
+    const otherTags = getUniqueTags(filterPostsByLocale(posts, otherLocale));
+    target = otherTags.some(tag => tag.tag === second)
+      ? getRelativeLocaleUrl(otherLocale, path)
+      : getRelativeLocaleUrl(otherLocale, "tags");
+  } else if (root === "posts" && /^\d+$/.test(second ?? "")) {
+    // page 2 of the listing may not exist in the other language
+    target = getRelativeLocaleUrl(otherLocale, "posts");
+  } else {
+    target = getRelativeLocaleUrl(otherLocale, path);
+  }
+} else if (path !== "") {
+  // an article: follow the translation link when one exists
+  const current = posts.find(
+    post =>
+      getPostLocale(post.filePath, post.id) === locale &&
+      getPostSlugPath(post.id, post.filePath) === path
+  );
+
+  if (current && locale === config.site.lang) {
+    const translation = current.data.translationOf;
+    if (translation) target = getRelativeLocaleUrl(otherLocale, translation);
+  } else if (current) {
+    const twin = posts.find(
+      post =>
+        getPostLocale(post.filePath, post.id) === otherLocale &&
+        post.data.translationOf === path
+    );
+    if (twin) target = getPostUrl(twin.id, twin.filePath, otherLocale);
+  }
+}
+---
+
+<li class="col-span-1 flex items-center justify-center">
+  <a
+    href={target}
+    hreflang={otherLocale}
+    class="focus-outline hover:text-accent rounded-sm px-2 text-sm font-semibold"
+    title={t.a11y.switchLanguage}
+    aria-label={t.a11y.switchLanguage}
+  >
+    {otherLocale.toUpperCase()}
+  </a>
+</li>
