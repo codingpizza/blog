@@ -27,7 +27,8 @@ if (!exportDir || !fs.existsSync(path.join(exportDir, 'posts.json'))) {
   process.exit(1);
 }
 
-const contentDir = path.join(repoDir, 'src/content/blog');
+const contentDir = path.join(repoDir, 'src/content/posts');
+const pagesDir = path.join(repoDir, 'src/content/pages');
 const imagesDir = path.join(repoDir, 'public/images');
 fs.mkdirSync(imagesDir, { recursive: true });
 
@@ -175,18 +176,28 @@ function yamlString(value) {
 function frontmatter(data) {
   const lines = ['---'];
   lines.push(`title: ${yamlString(data.title)}`);
-  if (data.description) lines.push(`description: ${yamlString(data.description)}`);
-  lines.push(`pubDate: ${data.pubDate}`);
-  if (data.updatedDate) lines.push(`updatedDate: ${data.updatedDate}`);
-  lines.push(`lang: ${data.lang}`);
-  lines.push(`slug: ${yamlString(data.slug)}`);
+  lines.push(`description: ${yamlString(data.description)}`);
+  lines.push(`pubDatetime: ${data.pubDate}`);
+  if (data.updatedDate) lines.push(`modDatetime: ${data.updatedDate}`);
+  lines.push(`tags: [${(data.tags ?? []).map(yamlString).join(', ')}]`);
+  if (data.heroImage) lines.push(`ogImage: ${yamlString(data.heroImage)}`);
+  lines.push('draft: false');
+  // --- provenance: every file stays traceable to its WordPress source ---
   if (data.translationOf) lines.push(`translationOf: ${yamlString(data.translationOf)}`);
   if (data.categories?.length) lines.push(`categories: [${data.categories.map(yamlString).join(', ')}]`);
-  if (data.tags?.length) lines.push(`tags: [${data.tags.map(yamlString).join(', ')}]`);
-  if (data.heroImage) lines.push(`heroImage: ${yamlString(data.heroImage)}`);
   lines.push(`sourceUrl: ${yamlString(data.sourceUrl)}`);
   lines.push(`wpId: ${data.wpId}`);
-  lines.push('draft: false');
+  lines.push('---', '');
+  return lines.join('\n');
+}
+
+function pageFrontmatter(data) {
+  const lines = ['---'];
+  lines.push(`title: ${yamlString(data.title)}`);
+  if (data.description) lines.push(`description: ${yamlString(data.description)}`);
+  lines.push(`lang: ${data.lang}`);
+  lines.push(`sourceUrl: ${yamlString(data.sourceUrl)}`);
+  lines.push(`wpId: ${data.wpId}`);
   lines.push('---', '');
   return lines.join('\n');
 }
@@ -244,10 +255,11 @@ async function convert(item, kind) {
     wpId: item.id,
   };
 
-  const dir = path.join(contentDir, lang);
+  const dir = kind === 'post' ? path.join(contentDir, lang) : pagesDir;
   fs.mkdirSync(dir, { recursive: true });
   const file = path.join(dir, `${slug}.md`);
-  fs.writeFileSync(file, frontmatter(data) + body, 'utf8');
+  const head = kind === 'post' ? frontmatter(data) : pageFrontmatter(data);
+  fs.writeFileSync(file, head + body, 'utf8');
 
   const entry = { lang, slug, file: path.relative(repoDir, file), title: data.title, words: body.split(/\s+/).length };
   if (kind === 'post') report.posts.push(entry);

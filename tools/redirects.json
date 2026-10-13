@@ -1,0 +1,212 @@
+[
+  {
+    "from": "/22-comandos-de-linux-que-debes-saber/",
+    "to": "/es/22-comandos-de-linux-que-debes-saber/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/7-plataformas-para-aprender-a-programar/",
+    "to": "/es/7-plataformas-para-aprender-a-programar/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/algoritmos/",
+    "to": "/es/algoritmos/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/camino-desarrollador-android-1/",
+    "to": "/es/camino-desarrollador-android-1/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/cda-9-cargar-imagenes-con-glide-v4/",
+    "to": "/es/cda-9-cargar-imagenes-con-glide-v4/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/collections-en-dart/",
+    "to": "/es/collections-en-dart/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/como-tomar-una-foto-con-flutter-o-elegir-una-foto-de-la-galeria/",
+    "to": "/es/como-tomar-una-foto-con-flutter-o-elegir-una-foto-de-la-galeria/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/como-usar-android-exoplayer-con-jetpack-compose/",
+    "to": "/es/como-usar-android-exoplayer-con-jetpack-compose/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/como-usar-el-android-navigation-component/",
+    "to": "/es/como-usar-el-android-navigation-component/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/el-camino-del-desarrollador-android-10/",
+    "to": "/es/el-camino-del-desarrollador-android-10/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/el-camino-del-desarrollador-android-2/",
+    "to": "/es/el-camino-del-desarrollador-android-2/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/el-camino-del-desarrollador-android-5-aplicacion-con-recyclerview/",
+    "to": "/es/el-camino-del-desarrollador-android-5-aplicacion-con-recyclerview/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/el-camino-del-desarrollador-android-6-activity-lifecycle/",
+    "to": "/es/el-camino-del-desarrollador-android-6-activity-lifecycle/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/el-camino-del-desarrollador-android-7-fragments/",
+    "to": "/es/el-camino-del-desarrollador-android-7-fragments/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/el-camino-del-desarrollador-android-8-conectividad-con-apis-y-retrofit/",
+    "to": "/es/el-camino-del-desarrollador-android-8-conectividad-con-apis-y-retrofit/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/en/cloudbuild-with-android/",
+    "to": "/cloudbuild-with-android/",
+    "reason": "english post loses the /en/ prefix"
+  },
+  {
+    "from": "/en/collections-in-dart/",
+    "to": "/collections-in-dart/",
+    "reason": "english post loses the /en/ prefix"
+  },
+  {
+    "from": "/en/control-flow-in-dart/",
+    "to": "/control-flow-in-dart/",
+    "reason": "english post loses the /en/ prefix"
+  },
+  {
+    "from": "/en/dart-variables/",
+    "to": "/dart-variables/",
+    "reason": "english post loses the /en/ prefix"
+  },
+  {
+    "from": "/en/functions-in-dart/",
+    "to": "/functions-in-dart/",
+    "reason": "english post loses the /en/ prefix"
+  },
+  {
+    "from": "/en/how-classes-works-in-dart/",
+    "to": "/how-classes-works-in-dart/",
+    "reason": "english post loses the /en/ prefix"
+  },
+  {
+    "from": "/en/parameters-in-dart/",
+    "to": "/parameters-in-dart/",
+    "reason": "english post loses the /en/ prefix"
+  },
+  {
+    "from": "/en/powerful-list-functions-in-dart-that-you-should-know/",
+    "to": "/powerful-list-functions-in-dart-that-you-should-know/",
+    "reason": "english post loses the /en/ prefix"
+  },
+  {
+    "from": "/en/storing-in-database-with-flutter/",
+    "to": "/storing-in-database-with-flutter/",
+    "reason": "english post loses the /en/ prefix"
+  },
+  {
+    "from": "/en/taking-a-picture-and-selecting-from-gallery-in-flutter/",
+    "to": "/taking-a-picture-and-selecting-from-gallery-in-flutter/",
+    "reason": "english post loses the /en/ prefix"
+  },
+  {
+    "from": "/en/what-is-a-unit-test/",
+    "to": "/what-is-a-unit-test/",
+    "reason": "english post loses the /en/ prefix"
+  },
+  {
+    "from": "/flujo-de-control-en-dart/",
+    "to": "/es/flujo-de-control-en-dart/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/funciones-en-dart/",
+    "to": "/es/funciones-en-dart/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/funciones-increibles-que-debes-conocer-al-trabajar-con-dart/",
+    "to": "/es/funciones-increibles-que-debes-conocer-al-trabajar-con-dart/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/guardar-en-base-de-datos-con-flutter/",
+    "to": "/es/guardar-en-base-de-datos-con-flutter/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/intents-imageview-bundles/",
+    "to": "/es/intents-imageview-bundles/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/nueva-charla-kotlin-dsl/",
+    "to": "/es/nueva-charla-kotlin-dsl/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/nuevo-canal-de-twitch/",
+    "to": "/es/nuevo-canal-de-twitch/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/page/2/",
+    "to": "/posts/2/",
+    "reason": "old home pagination"
+  },
+  {
+    "from": "/page/3/",
+    "to": "/posts/3/",
+    "reason": "old home pagination"
+  },
+  {
+    "from": "/parametros-en-dart/",
+    "to": "/es/parametros-en-dart/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/platzi/",
+    "to": "/es/platzi/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/por-que-debes-aprender-a-programar/",
+    "to": "/es/por-que-debes-aprender-a-programar/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/que-es-flutter/",
+    "to": "/es/que-es-flutter/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/que-es-un-unit-test/",
+    "to": "/es/que-es-un-unit-test/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/recyclerview-y-adapters/",
+    "to": "/es/recyclerview-y-adapters/",
+    "reason": "spanish post moved under /es/"
+  },
+  {
+    "from": "/variables-en-dart/",
+    "to": "/es/variables-en-dart/",
+    "reason": "spanish post moved under /es/"
+  }
+]
