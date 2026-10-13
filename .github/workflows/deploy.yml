@@ -32,6 +32,11 @@ jobs:
 
       - name: Build site
         run: npm run build
+        env:
+          # The repository preview is served from https://codingpizza.github.io/blog/.
+          # Set BASE_PATH to "/" (or remove it) when the custom domain serves the
+          # site from the domain root.
+          BASE_PATH: /blog
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

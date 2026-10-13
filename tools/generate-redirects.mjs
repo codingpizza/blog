@@ -23,12 +23,17 @@ if (!fs.existsSync(mapFile)) {
 }
 
 const redirects = JSON.parse(fs.readFileSync(mapFile, 'utf8'));
+// Targets are written for the domain root; add the deploy base when the site
+// is served from a subdirectory (the GitHub Pages preview).
+const base = (process.env.BASE_PATH ?? '/').replace(/\/+$/, '');
+const withBase = to => (to.startsWith('/') ? `${base}${to}` : to);
 let written = 0;
 const skipped = [];
 
 for (const { from, to } of redirects) {
   const target = path.join(distDir, from);
   const indexFile = path.join(target, 'index.html');
+  const destination = withBase(to);
 
   // never overwrite a real page: if the new site already serves this path, skip
   if (fs.existsSync(indexFile)) {
@@ -44,13 +49,13 @@ for (const { from, to } of redirects) {
   <head>
     <meta charset="utf-8" />
     <title>Redirecting…</title>
-    <link rel="canonical" href="${to}" />
+    <link rel="canonical" href="${destination}" />
     <meta name="robots" content="noindex" />
-    <meta http-equiv="refresh" content="0; url=${to}" />
-    <script>location.replace(${JSON.stringify(to)});</script>
+    <meta http-equiv="refresh" content="0; url=${destination}" />
+    <script>location.replace(${JSON.stringify(destination)});</script>
   </head>
   <body>
-    <p>This page has moved to <a href="${to}">${to}</a>.</p>
+    <p>This page has moved to <a href="${destination}">${destination}</a>.</p>
   </body>
 </html>
 `,

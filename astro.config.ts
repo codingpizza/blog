@@ -19,8 +19,14 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
 
+// The site is served from the domain root in production. The GitHub Pages
+// preview of the repository is served from a subdirectory, so the workflow sets
+// BASE_PATH=/blog for that build. See .github/workflows/deploy.yml.
+const base = process.env.BASE_PATH ?? "/";
+
 export default defineConfig({
   site: config.site.url,
+  base,
   integrations: [
     mdx(),
     sitemap({
