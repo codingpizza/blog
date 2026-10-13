@@ -11,11 +11,11 @@ wpId: 3981
 ---
 Hola mundo, los primeros pasos para todo desarrollador que se encuentra aprendiendo un nuevo lenguaje, un nuevo framework y empezando una nueva aventura con algo nuevo. En este post te hablo de como vamos a crear nuestro primer proyecto de Android Studio y hablaremos de uno de los 4 principales componentes de Android.
 
-## Tabla de contenidos
-
 Las famosas Activities y que sería de una Activity sin los widgets que la complementan, solo veríamos una pantalla la cual no podríamos hacer mas que cambiar de color.
 
 Los activities son una clase del SDK de Android, como ya mencionaba pueden almacenar muchos widgets inclusive almacenar Fragments (Otro componente de Android, pero del cual hablaremos en otro momento).
+
+#### Tabla de contenidos
 
 #### **¿Qué son los Widgets?**
 

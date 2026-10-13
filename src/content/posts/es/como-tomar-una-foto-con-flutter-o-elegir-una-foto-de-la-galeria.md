@@ -12,8 +12,6 @@ wpId: 4514
 ---
 ¡Hola! Ultimamente he estado trabajando en una app que requiere tomar una foto desde la app o de la galeria y mostrarla al usuario. He aprendido un par de cosas implementando esta feature y he querido compartirlo por acá. Existen varias formas de tomar una foto utilizando la cámara pero en esta oportunidad vamos a utilizar el **imagePicker** plugin.
 
-## Tabla de contenidos
-
 # Empecemos por las dependencias.
 
 Como primer paso, vamos a agregar los plugins a nuestras dependencias. Abrimos nuestro **pubspec.yaml** y agregamos los siguientes plugins:
@@ -50,6 +48,8 @@ flutter:
 
   uses-material-design: true
 ```
+
+## Tabla de contenidos
 
 ## Aumentamos la versión minima de Android
 

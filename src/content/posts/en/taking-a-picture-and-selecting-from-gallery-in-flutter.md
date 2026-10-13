@@ -12,8 +12,6 @@ wpId: 4501
 ---
 Hi there! I’ve been working in an App that requires to take a picture from the app or pick it from the gallery. And here’s what I learned about it. There are many ways to take a photo using the camera. This time we’re going to use the ImagePicker plugin.
 
-## Table of contents
-
 # Let’s start with the dependencies.
 
 As the first step, we need to add new plugins to our dependencies. In our **pubspec.yaml** we’re going to add the next plugins:
@@ -50,6 +48,8 @@ flutter:
 
   uses-material-design: true
 ```
+
+## Table of contents
 
 ## Adding a min Android SDK.
 

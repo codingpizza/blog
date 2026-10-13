@@ -9,11 +9,11 @@ categories: ["Android"]
 sourceUrl: "https://www.codingpizza.com/el-camino-del-desarrollador-android-7-fragments/"
 wpId: 4163
 ---
+## Tabla de contenidos
+
 ## **Fragments**
 
 ¡Hola! En esta oportunidad nos toca hablar de uno de los componentes de Android que mucha gente odia, los Fragments.
-
-## Tabla de contenidos
 
 Los Fragments podríamos decir que son piezas reutilizables de UI como los Layouts o los Viewgroups. Estos se pueden organizar de forma distinta dependiendo del tamaño de pantalla si así se quiere.
 

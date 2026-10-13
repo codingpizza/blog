@@ -12,13 +12,13 @@ wpId: 4452
 ---
 Hello everyone, this week we’re going to talk about Collections. Collections are a crucial part of every project. As always let’s start with what are **Collections**.
 
-## Table of contents
-
 Collections are objects that groups multiple elements inside of them; a List is one of them.
 
 Let’s say we have a list of lottery numbers. We can create a list from it.
 
 The `lotteryNumbers` is a **List,**which is part of Collections. In Dart, we can create a List in different ways.
+
+## Table of contents
 
 ## **Using var**
 

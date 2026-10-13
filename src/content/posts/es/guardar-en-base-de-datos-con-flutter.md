@@ -13,8 +13,6 @@ wpId: 4490
 
 Photo by Tim Evans on Unsplash.
 
-## Tabla de contenidos
-
 Almacenar texto en la base de datos es junto a las llamadas a red, una de las operaciones que como desarrolladores más tenemos que realizar. Algunas veces, necesitamos guardar la información de los servidores en nuestra app para que los usuarios puedan abrir la app y ver información previamente guardada antes de que se actualice con nuevo contenido, o podemos también tener que implementar un modo offline.
 
 En este artículo, vamos a hablar sobre cómo almacenar información en una app con Flutter. Nuestra app será una aplicación que almacenará unas Tareas por realizar (Todo’s), las cuales podremos consultar luego.
@@ -176,6 +174,8 @@ Luego de crear nuestro State necesitamos utilizar un **TextEditingController** p
 Al momento de crear nuestros **TextFields**, le pasamos a cada TextField su respectivo controller. Finalmente, para llamar al **DatabaseHelper** e indicarle que llame a la función **insertTodo** debemos pasarle a la propiedad **onPressed** del **floatingActionButton** una función anónima con un **Todo** creado usando el texto obtenido de los **TextEditingController**.
 
 ![/images/Screenshot\_1578338787.png](/images/Screenshot_1578338787.png)
+
+## Tabla de contenidos
 
 ## Actualizando nuestros Todo’s
 

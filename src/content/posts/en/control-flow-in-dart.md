@@ -14,13 +14,13 @@ wpId: 4441
 
 Hi there!, in the last month I’ve been writing about Dart and how things work in this language. If you’re new here, you can check my other post about Dart. I’ll leave it down below.
 
-## Table of contents
-
 ### [**Variables**](https://www.codingpizza.com/en/dart-variables/)
 
 ### [**Functions**](https://www.codingpizza.com/en/functions-in-dart/)
 
 ### **[Parameters](https://www.codingpizza.com/en/parameters-in-dart/)**
+
+## Table of contents
 
 ## **Power without control is useless.**
 

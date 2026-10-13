@@ -11,7 +11,7 @@ wpId: 4017
 ---
 Hola a todos, previamente ya hemos hablado acerca de lo que son las Activities, cómo funcionan y cómo agregar widgets para darle un uso y una apariencia. De lo que vamos a hablar en este Post es acerca de Intents,Imageview (Otro widget que aun no hemos cubierto) y Bundles. Estos componentes son esenciales en una app de Android, ya que por empezar a hablar de ellos los Intents nos ayudan a llamar a otro componente de la aplicación, es imposible tener una app sin imágenes así que para eso tenemos los ImageView y los Bundles que nos sirven para almacenar objetos y pasarlos a través de clases.
 
-## Tabla de contenidos
+#### Tabla de contenidos
 
 #### **¿Qué son los Intents?**
 

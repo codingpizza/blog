@@ -12,8 +12,6 @@ wpId: 4458
 ---
 ¡Hola! Esta semana vamos a hablar sobre **Collections**. Las **Collections** son muy importantes en la mayoría de proyectos en los que trabajamos. Como siempre, empecemos hablando sobre qué son la **Collections**.
 
-## Tabla de contenidos
-
 Las **Collections** son objetos que agrupan múltiples elementos dentro de ellos, un objeto List por ejemplo pertenece a los **Collections**.
 
 Digamos que tenemos una lista de números de lotería. Si creamos una lista con estos numeros se veria así.
@@ -25,6 +23,8 @@ var lotteryNumbers = List.of({18,23,43,65});
 Esta variable llamada `lotteryNumbers` es una lista. Y esta pertenece a las **Collections.**
 
 En Dart, podemos crear una lista de diferentes maneras.
+
+## Tabla de contenidos
 
 ## **Usando la palabra reservada *var***
 

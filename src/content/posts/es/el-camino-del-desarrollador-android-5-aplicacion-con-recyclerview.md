@@ -12,9 +12,9 @@ wpId: 4055
 ---
 Hola a todos, Por fin ha llegado el momento de crear nuestra primera aplicación donde utilizaremos todo lo que hemos estado aprendiendo en los post anteriores, si has llegado a este Post y no sabes de cual hablo, te invito a conocerlos [**aquí**](https://www.codingpizza.com/category/android/). Hoy nos enfocaremos en hacer una aplicación donde podamos «iniciar sesión», seleccionar una pizza entre un catalogo y al tocarla mostrar una descripción de ella.
 
-## Tabla de contenidos
-
 La idea de estas aplicaciones es practicar con ejemplos de la vida real donde puedes llegar a sentir que has aprendido algo, no solo ver videos o leer blogs y esperar que todo lo que has leído lo aprendas mágicamente. Lo que no se practica se olvida y en el campo de la programación la práctica hace al maestro.
+
+#### Tabla de contenidos
 
 #### **Creando el proyecto**
 

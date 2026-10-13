@@ -14,11 +14,11 @@ wpId: 4424
 
 Hi there! In the last post, we’ve been talking about variables and functions. If case you missed it, you can check our previous post here.
 
-## Table of contents
-
 [**Variables**](https://www.codingpizza.com/en/dart-variables/)
 
 [**Functions**](https://www.codingpizza.com/en/functions-in-dart/)
+
+## Table of contents
 
 ## **We saw them previously.**
 

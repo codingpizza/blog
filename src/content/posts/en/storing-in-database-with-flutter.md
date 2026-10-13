@@ -12,8 +12,6 @@ wpId: 4486
 ---
 Storing text in the Database is one of the most current operations that we, as developers, are going to do. Sometimes we need to save the data from the server so the users can open the app and if there’s data already stored we can show that first, or if we want to implement an have an offline mode.
 
-## Table of contents
-
 Today we’re going to see how to store data in Flutter. Our app is going to be a Todo app, where we store these todos to watch them later.
 
 What we’re going to need:
@@ -171,6 +169,8 @@ To retrieve the data from the **TextField**, we’re going to use **TextEditingC
 Lately, when we create our **TextField**, we pass their respective controller as a parameter. Finally, in the **FloatingActionButton** onPressed parameter, we pass an anonymous function, which calls our **DatabaseHelper** and inserts the Todo object.
 
 ![/images/Screenshot\_1578338787.png](/images/Screenshot_1578338787.png)
+
+## Table of contents
 
 ## Retriving the Todo’s from the database.
 

@@ -13,11 +13,11 @@ wpId: 4313
 
 ![](/images/dan-chung-355054-unsplash-1.jpg)
 
+## Tabla de contenidos
+
 ## El problema de la navegación
 
 A lo largo de los años los desarrolladores Android han buscado una forma de hacer más fácil la navegación entre los fragments y las activities dentro de las aplicaciones que creaban. Muchos inventaron una cantidad de clases y variantes llamadas Navigation, Base Navigation, Navigation Manager.
-
-## Tabla de contenidos
 
 Entre cualquier cantidad de ingeniosos nombres que el ser humano se puede inventar, cada uno tenía sus peculiaridades con sus ventajas y sus desventajas, muchas de estas necesitaban que el desarrollador heredara de una clase base o agregara manualmente constantes a una clase para así identificar a donde iría y de a donde vendría, esto solía generar muchos bugs respecto a la navegación de la app.
 

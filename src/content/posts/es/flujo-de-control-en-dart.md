@@ -14,11 +14,11 @@ wpId: 4444
 
 Hola!, en el último mes he estado escribiendo sobre Dart y cómo funcionan las cosas en este lenguaje. Si eres nuevo por acá puedes revisar mis otros post sobre Dart. Dejaré los enlaces acá debajo.
 
-## Tabla de contenidos
-
 -   [**Variables**](https://www.codingpizza.com/variables-en-dart/)
 -   [**Funciones**](https://www.codingpizza.com/funciones-en-dart/)
 -   **[Parámetros](https://www.codingpizza.com/parametros-en-dart/)**
+
+## Tabla de contenidos
 
 ## **El poder sin control es inútil**
 

@@ -11,7 +11,7 @@ wpId: 4229
 ---
 ¡Hola! Hoy vamos a seguir con la serie de tutoriales de desarrollo Android, estas guías que a cualquier desarrollador le pueden servir para aprender y usar en su trabajo. En esta oportunidad hablaremos de Glide, la cual es una librería que se utiliza para cargar imágenes en nuestras aplicaciones Android.
 
-## Tabla de contenidos
+#### Tabla de contenidos
 
 #### **Agregando Glide a nuestro proyecto**
 

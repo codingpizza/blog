@@ -11,8 +11,6 @@ wpId: 4526
 ---
 Hi there! At my current work, we had a problem with our CI/CD, and we started to look for alternatives. We checked out various platforms like CircleCI, Bitrise, and others. Still, the process to ask the upper-level management to add this as providers was a bit slow and tedious so, since we already had GCP as a provider, we decided to try GCP Cloudbuild.
 
-## Tabla de contenidos
-
 Cloudbuild is an infrastructure that allows you to run builds for your projects. The price was reasonable, so we decided to start investing time on it to move our Android CI/CD all to cloudbuild.
 
 As first we started looking for some previous experience on the internet and found two excellent articles about it, those articles will be linked below. Nevertheless, those articles required a certain knowledge of Docker, CloudBuild, and other technologies that I didn’t have.
@@ -24,6 +22,8 @@ Note: Articles in which this post is based.
 [**https://ryanharter.com/blog/cloud-build/**](https://ryanharter.com/blog/cloud-build/)
 
 [**https://medium.com/dailymotion/run-your-android-ci-in-google-cloud-build-2487c8b70ccf**](https://medium.com/dailymotion/run-your-android-ci-in-google-cloud-build-2487c8b70ccf)
+
+## Tabla de contenidos
 
 ## First, let’s enable GCP KMS
 

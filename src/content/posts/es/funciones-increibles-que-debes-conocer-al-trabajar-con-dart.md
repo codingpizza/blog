@@ -14,11 +14,11 @@ wpId: 4469
 
 En los post anteriores sobre Dart, hablamos sobre las Collections. Hablamos sobre Lists,Maps y sets. Y en esta oportunidad vamos a hablar sobre funciones asombrosas y que nos pueden ayudar en muchos casos.
 
-## Tabla de contenidos
-
 Nota:En este post usamos varios elementos que probablemente quieras repasar, como las funciones anónimas. Si es tu primera vez leyendo esta serie de artículos puedes aquí debajo te dejo el link para que leas sobre funciones en **Dart**.
 
 **[Funciones en Dart](https://www.codingpizza.com/funciones-en-dart/)**
+
+## Tabla de contenidos
 
 ## **Map**
 

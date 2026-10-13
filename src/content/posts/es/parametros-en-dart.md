@@ -13,10 +13,10 @@ wpId: 4433
 ---
 ¡Hola!, en los ultimos post he hablado sobre **variables** y **funciones.** Si te los has perdido, te dejo el link a ellos aqui debajo para que puedas echarle un ojo.
 
-## Tabla de contenidos
-
 -   **[Variables](https://www.codingpizza.com/variables-en-dart/)**
 -   **[Funciones](https://www.codingpizza.com/funciones-en-dart/)**
+
+## Tabla de contenidos
 
 ## **Ya hemos hablado un poco sobre ellos.**
 

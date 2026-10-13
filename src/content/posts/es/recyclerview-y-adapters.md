@@ -11,7 +11,7 @@ wpId: 4039
 ---
 Hola amigos, bienvenidos otra vez a otro tutorial de esta serie sobre Android en este caso por fin, toca hablar de uno de los elementos más usados en todo el mundo del desarrollo Android, RecyclerViews.
 
-## Tabla de contenidos
+#### Tabla de contenidos
 
 #### **¿Que son estos famosos RecyclerViews?**
 

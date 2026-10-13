@@ -10,11 +10,11 @@ categories: ["Dart"]
 sourceUrl: "https://www.codingpizza.com/en/dart-variables/"
 wpId: 4351
 ---
+## Tabla de contenidos
+
 ## **What are variables?**
 
 In this post we’re going to learn about variables in Dart, variables are like tiny-boxes that keeps references to a value, and this tiny-box can have a name so we can identify and remember it pretty easily.
-
-## Tabla de contenidos
 
 ## **How do we create them in Dart?**
 

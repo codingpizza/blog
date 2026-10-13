@@ -14,9 +14,9 @@ wpId: 4463
 
 In the previous post about Dart, we talked about **Collections** in Dart. We spoke about List, Maps, and sets. And today, we’re going to talk about some functions that are awesome and can help you in many cases.
 
-## Table of contents
-
 **Note**: In this post we use in various cases the anonymous function, if you are not familiarized with it, you can check my other post about **functions**.
+
+## Table of contents
 
 ## **Map**
 
