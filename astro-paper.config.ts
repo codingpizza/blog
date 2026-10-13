@@ -6,7 +6,7 @@ export default defineAstroPaperConfig({
     title: "Codingpizza",
     description: "Artículos sobre programación en Android y Kotlin",
     author: "Giuseppe Vetri",
-    profile: "https://github.com/Gvetri",
+    profile: "https://github.com/codingpizza",
     ogImage: "default-og.jpg",
     lang: "en",
     timezone: "Europe/Madrid",
@@ -30,10 +30,9 @@ export default defineAstroPaperConfig({
     search: "pagefind",
   },
   socials: [
-    { name: "github", url: "https://github.com/Gvetri" },
+    { name: "github", url: "https://github.com/codingpizza" },
     { name: "x", url: "https://x.com/0xSatellite0" },
-    { name: "linkedin", url: "https://www.linkedin.com/in/gvetri18/" },
-    { name: "mail", url: "mailto:giuseppe@codingpizza.com" },
+    { name: "mail", url: "mailto:contact@codingpizza.com" },
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },

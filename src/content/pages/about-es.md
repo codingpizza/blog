@@ -16,4 +16,4 @@ También desarrollo [hermes-native-client](https://github.com/Gvetri/hermes-nati
 
 Aquí escribo sobre Android, Kotlin, Dart y Flutter, y de vez en cuando algún truco de Linux. Las entradas antiguas están en español y las nuevas en inglés. Puedes leerlo todo en cualquiera de los dos idiomas.
 
-Si quieres hablar de Android, pruebas o autoalojamiento, mi correo es [giuseppe@codingpizza.com](mailto:giuseppe@codingpizza.com).
+Si quieres hablar de Android, pruebas o autoalojamiento, mi correo es [contact@codingpizza.com](mailto:contact@codingpizza.com).
