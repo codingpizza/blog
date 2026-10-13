@@ -1,6 +1,6 @@
 ---
 title: "Mi experiencia usando Platzi"
-description: "Hace poco mas de un año se realizó una conferencia de Platzi en Madrid, donde actualmente vivo. Me pareció interesante el contenido de la charla y fui a verla con mi novia, yo ya había escuchado de Platzi cuando vivía en Venezuela ya que recuerdo cuando un estudiante de la universidad donde yo me gr"
+description: "Hace poco mas de un año se realizó una conferencia de Platzi a la que pude asistir. Me pareció interesante el contenido de la charla, yo ya había escuchado de Platzi antes, ya que recuerdo cuando un estudiante de la universidad donde yo me gr"
 pubDatetime: 2020-06-06
 tags: []
 ogImage: "/images/codingpizza-platzi.png"
@@ -8,7 +8,7 @@ draft: false
 sourceUrl: "https://www.codingpizza.com/platzi/"
 wpId: 4540
 ---
-Hace poco mas de un año se realizó una conferencia de Platzi en Madrid, donde actualmente vivo. Me pareció interesante el contenido de la charla y fui a verla con mi novia, yo ya había escuchado de Platzi cuando vivía en Venezuela ya que recuerdo cuando un estudiante de la universidad donde yo me gradué fue contratado para ir a Colombia, donde tienen una de sus oficinas.
+Hace poco mas de un año se realizó una conferencia de Platzi a la que pude asistir. Me pareció interesante el contenido de la charla, yo ya había escuchado de Platzi antes, ya que recuerdo cuando un estudiante de la universidad donde yo me gradué fue contratado para ir a Colombia, donde tienen una de sus oficinas.
 
 ![Freddy Vega dando una charla](/images/freddy_vega_talk.jpg)
 

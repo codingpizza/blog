@@ -140,4 +140,4 @@ If you’re looking for an alternative to circleCI, bitrise, or others, and you�
 
 ## That’s it
 
-If you have any questions, suggestions, or improvements, please leave a comment ?. You can also reach me via Twitter [@gvetri18](http://www.twitter.com/gvetri18).
+If you have any questions, suggestions, or improvements, please leave a comment ?. You can also reach me via Twitter [@coding__pizza](http://www.twitter.com/coding__pizza).

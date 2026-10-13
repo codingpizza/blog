@@ -46,7 +46,7 @@ Para programar con Flutter tienes varias opciones:
 
 Una de las muchas ventajas con las que se vende Flutter es su habilidad de «HotReload» el cual te permite probar rápidamente, experimentar, construir interfaces, agregar funcionalidades y solucionar bugs rápidamente, ya que actualiza la aplicación en pocos segundos sin perder el estado en el que se encuentra, en emuladores y en dispositivos físicos, tanto para Android como para iOS. Eso es algo que suena bastante interesante.
 
-## **¡Perfecto! Mañana mismo migro toda la aplicación de mi empresa a Flutter**
+## **¡Perfecto! Mañana mismo migro toda la aplicación a Flutter**
 
 ![vamoacalmarnomeme](/images/vamoacalmarno.jpg)
 

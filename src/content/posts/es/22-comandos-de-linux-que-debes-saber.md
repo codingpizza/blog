@@ -27,11 +27,11 @@ Nos cambiaría al directorio de la carpeta app
 
 `cd ../`
 
-Nos cambia al directorio superior es decir, si tenemos Giuseppe/Documents/Codingpizza/Aplicaciones/AppDePizzaAndroid y nosotros estamos en el directorio *Aplicaciones* nos cambiaría al directorio *Codingpizza*
+Nos cambia al directorio superior es decir, si tenemos usuario/Documents/Codingpizza/Aplicaciones/AppDePizzaAndroid y nosotros estamos en el directorio *Aplicaciones* nos cambiaría al directorio *Codingpizza*
 
 `cd ~/Documents`
 
-El símbolo ~ indica que es la carpeta personal de cada usuario, si seguimos el ejemplo anterior, nos habíamos movido previamente a la carpeta *Codingpizza* pero ahora resulta que quiero moverme a mi carpeta personal por cualquier circunstancia utilizamos este comando y nos situaría en el directorio Giuseppe
+El símbolo ~ indica que es la carpeta personal de cada usuario, si seguimos el ejemplo anterior, nos habíamos movido previamente a la carpeta *Codingpizza* pero ahora resulta que quiero moverme a mi carpeta personal por cualquier circunstancia utilizamos este comando y nos situaría en el directorio usuario
 
 #### **2 ) ls**
 
