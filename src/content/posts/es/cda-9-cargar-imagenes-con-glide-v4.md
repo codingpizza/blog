@@ -27,11 +27,11 @@ El permiso de internet se incluye en el AndroidManifest.xml, dentro de la etique
 
 Para leer imágenes del usuario de la app vas a necesitar agregar el siguiente permiso, el cual se agrega igual que el anterior.
 
-**<uses-permission android:name=»android.permission.READ\_EXTERNAL\_STORAGE» />**
+`<uses-permission android:name=»android.permission.READ_EXTERNAL_STORAGE» />`
 
 Si quieres utilizar la cache de Glide para almacenar datos en la microSD vas a necesitar el permiso de escritura, si agregas los dos permisos al AndroidManifest quedaría así:
 
-**<uses-permission android:name=»android.permission.WRITE\_EXTERNAL\_STORAGE» />**
+`<uses-permission android:name=»android.permission.WRITE_EXTERNAL_STORAGE» />`
 
 Puedes usar el de Internet y estos que hemos mencionado anteriormente no son excluyentes, solo debes agregar uno debajo el otro. Con esto hemos terminado de incluir esta librería en nuestro proyecto usando Java, en caso de que uses Kotlin aun te falta algo mas por hacer.
 

@@ -8,7 +8,9 @@ import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
 import Card from "@/components/Card.astro";
 import LinkButton from "@/components/LinkButton.astro";
+import Tag from "@/components/Tag.astro";
 import { getSortedPosts } from "@/utils/getSortedPosts";
+import { getUniqueTags } from "@/utils/getUniqueTags";
 import { getPostsForLocale } from "@/utils/postsByLocale";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
@@ -25,6 +27,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 const homePath = getRelativeLocaleUrl(locale, "");
 const postsPath = getRelativeLocaleUrl(locale, "posts");
 const isSpanish = locale === "es";
+const tags = getUniqueTags(posts);
 ---
 
 <Layout>
@@ -156,6 +159,19 @@ const isSpanish = locale === "es";
         <IconArrowRight class="inline-block rtl:-rotate-180" />
       </LinkButton>
     </div>
+
+    {
+      tags.length > 0 && (
+        <section id="tags" class="border-border border-t pt-8 pb-4">
+          <h2 class="text-2xl font-semibold tracking-wide">{t.nav.tags}</h2>
+          <ul class="mt-4 flex flex-wrap gap-4">
+            {tags.map(({ tag, tagName }) => (
+              <Tag {tag} {tagName} />
+            ))}
+          </ul>
+        </section>
+      )
+    }
   </main>
   <Footer />
 </Layout>
