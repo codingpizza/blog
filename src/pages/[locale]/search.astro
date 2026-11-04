@@ -1,0 +1,13 @@
+---
+import type { GetStaticPaths } from "astro";
+// The search page reads the locale from the URL, so it can be reused as-is.
+import Search from "../search.astro";
+import { PREFIXED_LOCALES } from "@/utils/staticLocalePaths";
+
+export const getStaticPaths = (() =>
+  PREFIXED_LOCALES.map(locale => ({
+    params: { locale },
+  }))) satisfies GetStaticPaths;
+---
+
+<Search />

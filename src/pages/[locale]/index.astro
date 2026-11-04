@@ -1,0 +1,14 @@
+---
+import type { GetStaticPaths } from "astro";
+// The English home page reads the locale from the URL, so the component can be
+// reused as-is for every prefixed locale.
+import Home from "../index.astro";
+import { PREFIXED_LOCALES } from "@/utils/staticLocalePaths";
+
+export const getStaticPaths = (() =>
+  PREFIXED_LOCALES.map(locale => ({
+    params: { locale },
+  }))) satisfies GetStaticPaths;
+---
+
+<Home />

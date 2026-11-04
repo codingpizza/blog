@@ -62,7 +62,7 @@ export default {
     noResults: "No se encontraron resultados",
     goToPreviousPage: "Ir a la página anterior",
     goToNextPage: "Ir a la página siguiente",
-    switchLanguage: "Leer esta página en inglés",
+    switchLanguage: "Cambiar idioma",
   },
   notFound: {
     title: "404 No encontrado",

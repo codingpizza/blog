@@ -18,6 +18,7 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { remarkCollapseTableOfContents } from "./src/utils/remarkCollapseTableOfContents";
 import config from "./astro-paper.config";
+import { LOCALES } from "./src/i18n/locales";
 
 // The site is served from the domain root in production. The GitHub Pages
 // preview of the repository is served from a subdirectory, so the workflow sets
@@ -35,7 +36,7 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    locales: ["en", "es"],
+    locales: [...LOCALES],
     defaultLocale: "en",
     routing: {
       prefixDefaultLocale: false,
@@ -45,7 +46,10 @@ export default defineConfig({
     processor: unified({
       remarkPlugins: [
         // the table of contents is generated where the post has this heading
-        [remarkToc, { heading: "(table[ -]of[ -])?contents?|toc|tabla de contenidos" }],
+        [
+          remarkToc,
+          { heading: "(table[ -]of[ -])?contents?|toc|tabla de contenidos" },
+        ],
         remarkCollapseTableOfContents,
       ],
       rehypePlugins: [rehypeCallouts],

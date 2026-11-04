@@ -2,11 +2,12 @@ import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 import config from "@/config";
+import { LOCALES } from "@/i18n/locales";
 
 export const BLOG_PATH = "src/content/posts";
 
 /** Language folders under BLOG_PATH. The folder decides the post locale. */
-export const POST_LOCALES = ["en", "es"] as const;
+export const POST_LOCALES = LOCALES;
 export type PostLocale = (typeof POST_LOCALES)[number];
 
 const posts = defineCollection({
