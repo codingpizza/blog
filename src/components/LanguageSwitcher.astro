@@ -9,15 +9,16 @@ import {
 } from "@/utils/getPostPaths";
 import { getUniqueTags } from "@/utils/getUniqueTags";
 import { filterPostsByLocale } from "@/utils/postsByLocale";
+import { LOCALES, LOCALE_NAMES } from "@/i18n/locales";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
 
-// Link to the same page in the other language.
-// Articles use the `translationOf` field; pages that exist in both languages
-// keep the same path. When no counterpart exists the reader lands on the other
-// language home page, so the link never leads to a missing page.
+// Link to the same page in another language.
+// Articles are matched through `translationOf`, which keeps the slug of the
+// Spanish original. Pages that exist in every language keep the same path. When
+// a translation is missing the reader lands on that language's home page, so a
+// link never leads to a missing page.
 const locale = Astro.currentLocale ?? config.site.lang;
-const otherLocale = locale === "es" ? "en" : "es";
 const t = useTranslations(locale);
 
 const relative = stripBase(Astro.url.pathname);
@@ -27,55 +28,95 @@ const path = stripLocale(trimmed, locale).replace(/^\/+|\/+$/g, "");
 
 const posts = await getCollection("posts", ({ data }) => !data.draft);
 
-/** Routes that exist in both languages at the same path. */
-const sharedRoutes = ["posts", "tags", "archives", "search", "about"];
-const [root, second] = path.split("/");
+const current = posts.find(
+  post =>
+    getPostLocale(post.filePath, post.id) === locale &&
+    getPostSlugPath(post.id, post.filePath) === path
+);
 
-let target = getRelativeLocaleUrl(otherLocale, "");
+// Slug of the Spanish original, used to match every translation of an article.
+const canonical = current
+  ? locale === "es"
+    ? path
+    : (current.data.translationOf ?? null)
+  : null;
 
-if (sharedRoutes.includes(root)) {
+function articleUrl(targetLocale: string): string | null {
+  if (!current) return null;
+  if (getPostLocale(current.filePath, current.id) === targetLocale) {
+    return getPostUrl(current.id, current.filePath, targetLocale);
+  }
+  if (!canonical) return null;
+
+  const twin = posts.find(post => {
+    if (getPostLocale(post.filePath, post.id) !== targetLocale) return false;
+    return targetLocale === "es"
+      ? getPostSlugPath(post.id, post.filePath) === canonical
+      : post.data.translationOf === canonical;
+  });
+
+  return twin ? getPostUrl(twin.id, twin.filePath, targetLocale) : null;
+}
+
+function pageUrl(targetLocale: string): string {
+  const [root, second] = path.split("/");
+
   if (root === "tags" && second) {
     // a tag page only exists in the other language when that language uses it
-    const otherTags = getUniqueTags(filterPostsByLocale(posts, otherLocale));
-    target = otherTags.some(tag => tag.tag === second)
-      ? getRelativeLocaleUrl(otherLocale, path)
-      : getRelativeLocaleUrl(otherLocale, "tags");
-  } else if (root === "posts" && /^\d+$/.test(second ?? "")) {
-    // page 2 of the listing may not exist in the other language
-    target = getRelativeLocaleUrl(otherLocale, "posts");
-  } else {
-    target = getRelativeLocaleUrl(otherLocale, path);
+    const targetTags = getUniqueTags(filterPostsByLocale(posts, targetLocale));
+    return targetTags.some(tag => tag.tag === second)
+      ? getRelativeLocaleUrl(targetLocale, path)
+      : getRelativeLocaleUrl(targetLocale, "tags");
   }
-} else if (path !== "") {
-  // an article: follow the translation link when one exists
-  const current = posts.find(
-    post =>
-      getPostLocale(post.filePath, post.id) === locale &&
-      getPostSlugPath(post.id, post.filePath) === path
-  );
 
-  if (current && locale === config.site.lang) {
-    const translation = current.data.translationOf;
-    if (translation) target = getRelativeLocaleUrl(otherLocale, translation);
-  } else if (current) {
-    const twin = posts.find(
-      post =>
-        getPostLocale(post.filePath, post.id) === otherLocale &&
-        post.data.translationOf === path
-    );
-    if (twin) target = getPostUrl(twin.id, twin.filePath, otherLocale);
+  if (root === "posts" && /^\d+$/.test(second ?? "")) {
+    // page 2 of the listing may not exist in the other language
+    return getRelativeLocaleUrl(targetLocale, "posts");
   }
+
+  return getRelativeLocaleUrl(targetLocale, path);
 }
+
+// On an article list only the languages that actually have it; on any other
+// page list every locale the site publishes.
+const options = current
+  ? LOCALES.filter(targetLocale => articleUrl(targetLocale) !== null)
+  : [...LOCALES];
 ---
 
-<li class="col-span-1 flex items-center justify-center">
-  <a
-    href={target}
-    hreflang={otherLocale}
-    class="focus-outline hover:text-accent rounded-sm px-2 text-sm font-semibold"
-    title={t.a11y.switchLanguage}
-    aria-label={t.a11y.switchLanguage}
-  >
-    {otherLocale.toUpperCase()}
-  </a>
-</li>
+{
+  options.length > 1 && (
+    <li class="relative col-span-1 flex items-center justify-center">
+      <details class="group relative">
+        <summary
+          class="focus-outline hover:text-accent cursor-pointer list-none px-2 py-1 text-sm font-semibold uppercase"
+          title={t.a11y.switchLanguage}
+          aria-label={t.a11y.switchLanguage}
+        >
+          {locale}
+        </summary>
+        <ul class="border-border bg-background absolute end-0 z-50 mt-2 max-h-80 w-44 overflow-auto rounded-md border p-1 shadow-lg">
+          {options.map(targetLocale => (
+            <li>
+              <a
+                href={
+                  current
+                    ? (articleUrl(targetLocale) ?? "")
+                    : pageUrl(targetLocale)
+                }
+                hreflang={targetLocale}
+                lang={targetLocale}
+                class:list={[
+                  "hover:bg-muted block rounded-sm px-3 py-2 text-sm",
+                  { "text-accent font-semibold": targetLocale === locale },
+                ]}
+              >
+                {LOCALE_NAMES[targetLocale]}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </details>
+    </li>
+  )
+}
